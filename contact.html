@@ -10,6 +10,12 @@
   <link rel="canonical" href="https://sykr4.com/contact.html">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="./assets/logo.webp" type="image/x-icon">
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init("5Cs_5lr8xvBlS65MJ"); // Reemplaza con tu Public Key de EmailJS
+    })();
+  </script>
 </head>
 
 <body>
@@ -48,25 +54,25 @@
 
     <section class="section">
       <div class="container grid grid-2 contact-grid">
-        <div class="card reveal">
+        <div class="card reveal card-contact">
           <h2>Envíanos un mensaje</h2>
           <!-- El formulario es accesible y ligero; puedes conectarlo a un backend o servicio externo -->
-          <form class="contact-form" action="https://example.com/form-handler" method="post">
+          <form id="contact-form" class="contact-form" method="post">
             <div class="form-field">
-              <label for="name">Nombre</label>
-              <input id="name" name="name" type="text" required autocomplete="name">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" required autocomplete="nombre">
             </div>
             <div class="form-field">
               <label for="email">Correo electrónico</label>
               <input id="email" name="email" type="email" required autocomplete="email">
             </div>
             <div class="form-field">
-              <label for="company">Empresa (opcional)</label>
-              <input id="company" name="company" type="text" autocomplete="organization">
+              <label for="empresa">Empresa (opcional)</label>
+              <input id="empresa" name="empresa" type="text" autocomplete="organization">
             </div>
             <div class="form-field">
-              <label for="topic">¿En qué podemos ayudarte?</label>
-              <select id="topic" name="topic" required>
+              <label for="motivo">¿En qué podemos ayudarte?</label>
+              <select id="motivo" name="motivo" required>
                 <option value="">Selecciona una opción</option>
                 <option value="web">Creación de web / plataforma</option>
                 <option value="hosting">Hosting / servidores</option>
@@ -77,8 +83,8 @@
               </select>
             </div>
             <div class="form-field">
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
             </div>
             <button class="btn btn-primary" type="submit">Enviar mensaje</button>
           </form>
