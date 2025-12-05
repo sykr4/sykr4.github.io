@@ -146,3 +146,15 @@ document.addEventListener('click', event => {
 window.addEventListener('popstate', () => {
   navigateTo(window.location.href, { addToHistory: false });
 });
+
+// Envío de formularios con fetch (opcional, depende del backend)
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_pxq1en9', 'template_6n6lj7f', this)
+        .then(function() {
+          alert('Mensaje enviado correctamente');
+        }, function(error) {
+          alert('Error al enviar el mensaje: ' + error.text);
+        });
+    });
