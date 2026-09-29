@@ -1,0 +1,142 @@
+[
+  {
+    "width": 270,
+    "title": "IA y automatización",
+    "scroll": 270,
+    "dialogWidth": 310,
+    "viewport": 320
+  },
+  {
+    "width": 270,
+    "title": "AWS, cloud y costes",
+    "scroll": 270,
+    "dialogWidth": 310,
+    "viewport": 320
+  },
+  {
+    "width": 270,
+    "title": "Seguridad y Microsoft 365",
+    "scroll": 270,
+    "dialogWidth": 310,
+    "viewport": 320
+  },
+  {
+    "width": 270,
+    "title": "Desarrollo e integraciones",
+    "scroll": 270,
+    "dialogWidth": 310,
+    "viewport": 320
+  },
+  {
+    "width": 270,
+    "title": "Web y ecommerce",
+    "scroll": 270,
+    "dialogWidth": 310,
+    "viewport": 320
+  },
+  {
+    "width": 340,
+    "title": "IA y automatización",
+    "scroll": 340,
+    "dialogWidth": 380,
+    "viewport": 390
+  },
+  {
+    "width": 340,
+    "title": "AWS, cloud y costes",
+    "scroll": 340,
+    "dialogWidth": 380,
+    "viewport": 390
+  },
+  {
+    "width": 340,
+    "title": "Seguridad y Microsoft 365",
+    "scroll": 340,
+    "dialogWidth": 380,
+    "viewport": 390
+  },
+  {
+    "width": 340,
+    "title": "Desarrollo e integraciones",
+    "scroll": 340,
+    "dialogWidth": 380,
+    "viewport": 390
+  },
+  {
+    "width": 340,
+    "title": "Web y ecommerce",
+    "scroll": 340,
+    "dialogWidth": 380,
+    "viewport": 390
+  },
+  {
+    "width": 678,
+    "title": "IA y automatización",
+    "scroll": 678,
+    "dialogWidth": 758,
+    "viewport": 768
+  },
+  {
+    "width": 678,
+    "title": "AWS, cloud y costes",
+    "scroll": 678,
+    "dialogWidth": 758,
+    "viewport": 768
+  },
+  {
+    "width": 678,
+    "title": "Seguridad y Microsoft 365",
+    "scroll": 678,
+    "dialogWidth": 758,
+    "viewport": 768
+  },
+  {
+    "width": 678,
+    "title": "Desarrollo e integraciones",
+    "scroll": 678,
+    "dialogWidth": 758,
+    "viewport": 768
+  },
+  {
+    "width": 678,
+    "title": "Web y ecommerce",
+    "scroll": 678,
+    "dialogWidth": 758,
+    "viewport": 768
+  },
+  {
+    "width": 690,
+    "title": "IA y automatización",
+    "scroll": 690,
+    "dialogWidth": 1270,
+    "viewport": 1280
+  },
+  {
+    "width": 690,
+    "title": "AWS, cloud y costes",
+    "scroll": 690,
+    "dialogWidth": 1270,
+    "viewport": 1280
+  },
+  {
+    "width": 690,
+    "title": "Seguridad y Microsoft 365",
+    "scroll": 690,
+    "dialogWidth": 1270,
+    "viewport": 1280
+  },
+  {
+    "width": 690,
+    "title": "Desarrollo e integraciones",
+    "scroll": 690,
+    "dialogWidth": 1270,
+    "viewport": 1280
+  },
+  {
+    "width": 690,
+    "title": "Web y ecommerce",
+    "scroll": 690,
+    "dialogWidth": 1270,
+    "viewport": 1280
+  }
+]

@@ -1,0 +1,4293 @@
+{
+  "browser": "153.0.8010.12",
+  "results": [
+    {
+      "label": "320x568",
+      "width": 320,
+      "height": 568,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4176/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "menu",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "manifiesto",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "servicios",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "video",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "contacto",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "form-errors",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "form-long",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "casos",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "resultados",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "nosotros",
+          "width": 320,
+          "scrollWidth": 320
+        },
+        {
+          "name": "footer",
+          "width": 320,
+          "scrollWidth": 320
+        }
+      ],
+      "overflows": [],
+      "serviceTitles": [
+        {
+          "text": "IA y automatización",
+          "width": 211,
+          "scrollWidth": 211
+        },
+        {
+          "text": "AWS, cloud y costes",
+          "width": 211,
+          "scrollWidth": 211
+        },
+        {
+          "text": "Seguridad y Microsoft 365",
+          "width": 211,
+          "scrollWidth": 211
+        },
+        {
+          "text": "Desarrollo e integraciones",
+          "width": 211,
+          "scrollWidth": 211
+        },
+        {
+          "text": "Web y ecommerce",
+          "width": 211,
+          "scrollWidth": 211
+        }
+      ],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 213.6202392578125,
+          "width": 259,
+          "height": 52,
+          "top": 213.6202392578125,
+          "right": 279,
+          "bottom": 265.6202392578125,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 20,
+          "y": 152.59375,
+          "width": 280,
+          "height": 71.96875,
+          "top": 152.59375,
+          "right": 300,
+          "bottom": 224.5625,
+          "left": 20
+        },
+        "scene": {
+          "x": 0,
+          "y": 252.5625,
+          "width": 320,
+          "height": 600,
+          "top": 252.5625,
+          "right": 320,
+          "bottom": 852.5625,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 568,
+          "top": 0,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4176/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 0.6,
+          "activeSeconds": 1.2000000000000004,
+          "inactiveSeconds": 0.9000000000000004,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18.3,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.2000000000000004,
+          "lookBlend": 0,
+          "headStepDegrees": 0.4596339702611291,
+          "maxHeadStepDegrees": 2.321915996270942,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "360x800",
+      "width": 360,
+      "height": 800,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4176/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "menu",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "manifiesto",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "servicios",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "video",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "contacto",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "form-errors",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "form-long",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "casos",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "resultados",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "nosotros",
+          "width": 360,
+          "scrollWidth": 360
+        },
+        {
+          "name": "footer",
+          "width": 360,
+          "scrollWidth": 360
+        }
+      ],
+      "overflows": [],
+      "serviceTitles": [
+        {
+          "text": "IA y automatización",
+          "width": 244,
+          "scrollWidth": 244
+        },
+        {
+          "text": "AWS, cloud y costes",
+          "width": 244,
+          "scrollWidth": 244
+        },
+        {
+          "text": "Seguridad y Microsoft 365",
+          "width": 244,
+          "scrollWidth": 244
+        },
+        {
+          "text": "Desarrollo e integraciones",
+          "width": 244,
+          "scrollWidth": 244
+        },
+        {
+          "text": "Web y ecommerce",
+          "width": 244,
+          "scrollWidth": 244
+        }
+      ],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 621.46875,
+          "width": 259,
+          "height": 52,
+          "top": 621.46875,
+          "right": 279,
+          "bottom": 673.46875,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 20,
+          "y": 152.65625,
+          "width": 320,
+          "height": 71.96875,
+          "top": 152.65625,
+          "right": 340,
+          "bottom": 224.625,
+          "left": 20
+        },
+        "scene": {
+          "x": 0,
+          "y": 252.625,
+          "width": 360,
+          "height": 832,
+          "top": 252.625,
+          "right": 360,
+          "bottom": 1084.625,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 800,
+          "top": 0,
+          "right": 360,
+          "bottom": 800,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4176/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 0.6,
+          "activeSeconds": 0.9000000000000002,
+          "inactiveSeconds": 0.9000000000000002,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 0.9000000000000002,
+          "lookBlend": 0,
+          "headStepDegrees": 0.45963389911616714,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "390x844",
+      "width": 390,
+      "height": 844,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "menu",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "manifiesto",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "servicios",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "video",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "contacto",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "form-errors",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "form-long",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "casos",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "resultados",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "nosotros",
+          "width": 390,
+          "scrollWidth": 390
+        },
+        {
+          "name": "footer",
+          "width": 390,
+          "scrollWidth": 390
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 602.171875,
+          "width": 259,
+          "height": 52,
+          "top": 602.171875,
+          "right": 279,
+          "bottom": 654.171875,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 20,
+          "y": 152.78125,
+          "width": 350,
+          "height": 71.96875,
+          "top": 152.78125,
+          "right": 370,
+          "bottom": 224.75,
+          "left": 20
+        },
+        "scene": {
+          "x": 0,
+          "y": 252.75,
+          "width": 390,
+          "height": 876,
+          "top": 252.75,
+          "right": 390,
+          "bottom": 1128.75,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 0.6,
+          "activeSeconds": 0.9000000000000002,
+          "inactiveSeconds": 0.9000000000000002,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 0.9000000000000002,
+          "lookBlend": 0,
+          "headStepDegrees": 0.45963389911616714,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "430x932",
+      "width": 430,
+      "height": 932,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "menu",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "manifiesto",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "servicios",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "video",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "contacto",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "form-errors",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "form-long",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "casos",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "resultados",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "nosotros",
+          "width": 430,
+          "scrollWidth": 430
+        },
+        {
+          "name": "footer",
+          "width": 430,
+          "scrollWidth": 430
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 646.171875,
+          "width": 259,
+          "height": 52,
+          "top": 646.171875,
+          "right": 279,
+          "bottom": 698.171875,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 20,
+          "y": 152.8125,
+          "width": 390,
+          "height": 71.96875,
+          "top": 152.8125,
+          "right": 410,
+          "bottom": 224.78125,
+          "left": 20
+        },
+        "scene": {
+          "x": 0,
+          "y": 252.78125,
+          "width": 430,
+          "height": 964,
+          "top": 252.78125,
+          "right": 430,
+          "bottom": 1216.78125,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 430,
+          "height": 932,
+          "top": 0,
+          "right": 430,
+          "bottom": 932,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 0.6,
+          "activeSeconds": 0.9000000000000002,
+          "inactiveSeconds": 0.9000000000000002,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 0.9000000000000002,
+          "lookBlend": 0,
+          "headStepDegrees": 0.45963389911616714,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "844x390",
+      "width": 844,
+      "height": 390,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "menu",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "manifiesto",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "servicios",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "video",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "contacto",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "form-errors",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "form-long",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "casos",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "resultados",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "nosotros",
+          "width": 844,
+          "scrollWidth": 834
+        },
+        {
+          "name": "footer",
+          "width": 844,
+          "scrollWidth": 834
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 382,
+          "y": 109.046875,
+          "width": 259,
+          "height": 52,
+          "top": 109.046875,
+          "right": 641,
+          "bottom": 161.046875,
+          "left": 382
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.59375,
+          "width": 754,
+          "height": 52.75,
+          "top": 152.59375,
+          "right": 794,
+          "bottom": 205.34375,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 233.34375,
+          "width": 834,
+          "height": 422,
+          "top": 233.34375,
+          "right": 834,
+          "bottom": 655.34375,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0.34375,
+          "width": 834,
+          "height": 469.125,
+          "top": 0.34375,
+          "right": 834,
+          "bottom": 469.46875,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 0.25,
+          "activeSeconds": 0.5499999999999999,
+          "inactiveSeconds": 0.5499999999999999,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 0.5499999999999999,
+          "lookBlend": 0,
+          "headStepDegrees": 0.8334808915725985,
+          "maxHeadStepDegrees": 0.8334808915725985,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "menu",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "manifiesto",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "servicios",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "video",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "contacto",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "form-errors",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "form-long",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "casos",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "resultados",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "nosotros",
+          "width": 768,
+          "scrollWidth": 758
+        },
+        {
+          "name": "footer",
+          "width": 768,
+          "scrollWidth": 758
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 306,
+          "y": 778.28125,
+          "width": 259,
+          "height": 52,
+          "top": 778.28125,
+          "right": 565,
+          "bottom": 830.28125,
+          "left": 306
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.21875,
+          "width": 678,
+          "height": 48,
+          "top": 152.21875,
+          "right": 718,
+          "bottom": 200.21875,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 228.21875,
+          "width": 758,
+          "height": 1056,
+          "top": 228.21875,
+          "right": 758,
+          "bottom": 1284.21875,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0.21875,
+          "width": 758,
+          "height": 1024,
+          "top": 0.21875,
+          "right": 758,
+          "bottom": 1024.21875,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 1.850000000000001,
+          "activeSeconds": 2.1500000000000004,
+          "inactiveSeconds": 2.1500000000000004,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 2.1500000000000004,
+          "lookBlend": 0,
+          "headStepDegrees": 1.2081061915206974,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "menu",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "manifiesto",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "servicios",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "video",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "contacto",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "form-errors",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "form-long",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "casos",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "resultados",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "nosotros",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "footer",
+          "width": 1024,
+          "scrollWidth": 1014
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 562,
+          "y": 567.4375,
+          "width": 259,
+          "height": 52,
+          "top": 567.4375,
+          "right": 821,
+          "bottom": 619.4375,
+          "left": 562
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.921875,
+          "width": 934,
+          "height": 64,
+          "top": 152.921875,
+          "right": 974,
+          "bottom": 216.921875,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 244.921875,
+          "width": 1014,
+          "height": 800,
+          "top": 244.921875,
+          "right": 1014,
+          "bottom": 1044.921875,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1014,
+          "height": 768,
+          "top": 0,
+          "right": 1014,
+          "bottom": 768,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 1.4000000000000006,
+          "activeSeconds": 1.7000000000000008,
+          "inactiveSeconds": 1.7000000000000008,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.7000000000000008,
+          "lookBlend": 0,
+          "headStepDegrees": 0.12253427723835521,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "1280x720",
+      "width": 1280,
+      "height": 720,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "menu",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "manifiesto",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "servicios",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "video",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "contacto",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "form-errors",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "form-long",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "casos",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "resultados",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "nosotros",
+          "width": 1280,
+          "scrollWidth": 1270
+        },
+        {
+          "name": "footer",
+          "width": 1280,
+          "scrollWidth": 1270
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 818,
+          "y": 551.921875,
+          "width": 259,
+          "height": 52,
+          "top": 551.921875,
+          "right": 1077,
+          "bottom": 603.921875,
+          "left": 818
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.109375,
+          "width": 1190,
+          "height": 80,
+          "top": 152.109375,
+          "right": 1230,
+          "bottom": 232.109375,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 260.109375,
+          "width": 1270,
+          "height": 752,
+          "top": 260.109375,
+          "right": 1270,
+          "bottom": 1012.109375,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0.109375,
+          "width": 1270,
+          "height": 720,
+          "top": 0.109375,
+          "right": 1270,
+          "bottom": 720.109375,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 1.4000000000000006,
+          "activeSeconds": 1.7000000000000008,
+          "inactiveSeconds": 1.7000000000000008,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.7000000000000008,
+          "lookBlend": 0,
+          "headStepDegrees": 0.12253427723835521,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "1366x768",
+      "width": 1366,
+      "height": 768,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "menu",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "manifiesto",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "servicios",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "video",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "contacto",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "form-errors",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "form-long",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "casos",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "resultados",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "nosotros",
+          "width": 1366,
+          "scrollWidth": 1356
+        },
+        {
+          "name": "footer",
+          "width": 1366,
+          "scrollWidth": 1356
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 904,
+          "y": 586.21875,
+          "width": 259,
+          "height": 52,
+          "top": 586.21875,
+          "right": 1163,
+          "bottom": 638.21875,
+          "left": 904
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.078125,
+          "width": 1276,
+          "height": 85.359375,
+          "top": 152.078125,
+          "right": 1316,
+          "bottom": 237.4375,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 265.4375,
+          "width": 1356,
+          "height": 800,
+          "top": 265.4375,
+          "right": 1356,
+          "bottom": 1065.4375,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0.4375,
+          "width": 1356,
+          "height": 768,
+          "top": 0.4375,
+          "right": 1356,
+          "bottom": 768.4375,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 1.4000000000000006,
+          "activeSeconds": 1.7000000000000008,
+          "inactiveSeconds": 1.7000000000000008,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.7000000000000008,
+          "lookBlend": 0,
+          "headStepDegrees": 0.12253427723835521,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "menu",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "manifiesto",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "servicios",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "video",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "contacto",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "form-errors",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "form-long",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "casos",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "resultados",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "nosotros",
+          "width": 1440,
+          "scrollWidth": 1430
+        },
+        {
+          "name": "footer",
+          "width": 1440,
+          "scrollWidth": 1430
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 978,
+          "y": 661,
+          "width": 259,
+          "height": 52,
+          "top": 661,
+          "right": 1237,
+          "bottom": 713,
+          "left": 978
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.75,
+          "width": 1350,
+          "height": 90,
+          "top": 152.75,
+          "right": 1390,
+          "bottom": 242.75,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 270.75,
+          "width": 1430,
+          "height": 932,
+          "top": 270.75,
+          "right": 1430,
+          "bottom": 1202.75,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1430,
+          "height": 900,
+          "top": 0,
+          "right": 1430,
+          "bottom": 900,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 1.4500000000000006,
+          "activeSeconds": 1.7500000000000009,
+          "inactiveSeconds": 1.7500000000000009,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.7500000000000009,
+          "lookBlend": 0,
+          "headStepDegrees": 0.17326907478399828,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "menu",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "manifiesto",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "servicios",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "video",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "contacto",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "form-errors",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "form-long",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "casos",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "resultados",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "nosotros",
+          "width": 1920,
+          "scrollWidth": 1910
+        },
+        {
+          "name": "footer",
+          "width": 1920,
+          "scrollWidth": 1910
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 1243,
+          "y": 784.796875,
+          "width": 259,
+          "height": 52,
+          "top": 784.796875,
+          "right": 1502,
+          "bottom": 836.796875,
+          "left": 1243
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.953125,
+          "width": 1830,
+          "height": 95.984375,
+          "top": 152.953125,
+          "right": 1870,
+          "bottom": 248.9375,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 276.9375,
+          "width": 1910,
+          "height": 1112,
+          "top": 276.9375,
+          "right": 1910,
+          "bottom": 1388.9375,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1910,
+          "height": 1080,
+          "top": 0,
+          "right": 1910,
+          "bottom": 1080,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 1.4500000000000006,
+          "activeSeconds": 1.7500000000000009,
+          "inactiveSeconds": 1.7500000000000009,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.7500000000000009,
+          "lookBlend": 0,
+          "headStepDegrees": 0.17326907478399828,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "2560x1440",
+      "width": 2560,
+      "height": 1440,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "menu",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "manifiesto",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "servicios",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "video",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "contacto",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "form-errors",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "form-long",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "casos",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "resultados",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "nosotros",
+          "width": 2560,
+          "scrollWidth": 2550
+        },
+        {
+          "name": "footer",
+          "width": 2560,
+          "scrollWidth": 2550
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 1563,
+          "y": 964.796875,
+          "width": 259,
+          "height": 52,
+          "top": 964.796875,
+          "right": 1822,
+          "bottom": 1016.796875,
+          "left": 1563
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.359375,
+          "width": 2470,
+          "height": 95.984375,
+          "top": 152.359375,
+          "right": 2510,
+          "bottom": 248.34375,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 276.34375,
+          "width": 2550,
+          "height": 1472,
+          "top": 276.34375,
+          "right": 2550,
+          "bottom": 1748.34375,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0.34375,
+          "width": 2550,
+          "height": 1440,
+          "top": 0.34375,
+          "right": 2550,
+          "bottom": 1440.34375,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 1.1000000000000003,
+          "activeSeconds": 1.4000000000000006,
+          "inactiveSeconds": 1.4000000000000006,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.4000000000000006,
+          "lookBlend": 0,
+          "headStepDegrees": 0.13140932997395668,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "3440x1440",
+      "width": 3440,
+      "height": 1440,
+      "zoom": 1,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "menu",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "manifiesto",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "servicios",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "video",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "contacto",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "form-errors",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "form-long",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "casos",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "resultados",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "nosotros",
+          "width": 3440,
+          "scrollWidth": 3430
+        },
+        {
+          "name": "footer",
+          "width": 3440,
+          "scrollWidth": 3430
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 2003,
+          "y": 964.796875,
+          "width": 259,
+          "height": 52,
+          "top": 964.796875,
+          "right": 2262,
+          "bottom": 1016.796875,
+          "left": 2003
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.359375,
+          "width": 3350,
+          "height": 95.984375,
+          "top": 152.359375,
+          "right": 3390,
+          "bottom": 248.34375,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 276.34375,
+          "width": 3430,
+          "height": 1472,
+          "top": 276.34375,
+          "right": 3430,
+          "bottom": 1748.34375,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0.34375,
+          "width": 3430,
+          "height": 1929.375,
+          "top": 0.34375,
+          "right": 3430,
+          "bottom": 1929.71875,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 1.3500000000000005,
+          "activeSeconds": 1.6500000000000008,
+          "inactiveSeconds": 1.6500000000000008,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.6500000000000008,
+          "lookBlend": 0,
+          "headStepDegrees": 0.12043774122231844,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "479x800",
+      "width": 479,
+      "height": 800,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 479,
+          "scrollWidth": 479
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 598.453125,
+          "width": 259,
+          "height": 52,
+          "top": 598.453125,
+          "right": 279,
+          "bottom": 650.453125,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "480x800",
+      "width": 480,
+      "height": 800,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 480,
+          "scrollWidth": 480
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 613.59375,
+          "width": 259,
+          "height": 52,
+          "top": 613.59375,
+          "right": 279,
+          "bottom": 665.59375,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "639x800",
+      "width": 639,
+      "height": 800,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 639,
+          "scrollWidth": 639
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 632.546875,
+          "width": 259,
+          "height": 52,
+          "top": 632.546875,
+          "right": 279,
+          "bottom": 684.546875,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "640x800",
+      "width": 640,
+      "height": 800,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 640,
+          "scrollWidth": 640
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 632.6875,
+          "width": 259,
+          "height": 52,
+          "top": 632.6875,
+          "right": 279,
+          "bottom": 684.6875,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "767x900",
+      "width": 767,
+      "height": 900,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 767,
+          "scrollWidth": 767
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 697.828125,
+          "width": 259,
+          "height": 52,
+          "top": 697.828125,
+          "right": 279,
+          "bottom": 749.828125,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "769x900",
+      "width": 769,
+      "height": 900,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 769,
+          "scrollWidth": 759
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 307,
+          "y": 716.40625,
+          "width": 259,
+          "height": 52,
+          "top": 716.40625,
+          "right": 566,
+          "bottom": 768.40625,
+          "left": 307
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "1023x780",
+      "width": 1023,
+      "height": 780,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1023,
+          "scrollWidth": 1013
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 561,
+          "y": 671.5,
+          "width": 259,
+          "height": 52,
+          "top": 671.5,
+          "right": 820,
+          "bottom": 723.5,
+          "left": 561
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "1024x779",
+      "width": 1024,
+      "height": 779,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1024,
+          "scrollWidth": 1014
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 562,
+          "y": 572.9375,
+          "width": 259,
+          "height": 52,
+          "top": 572.9375,
+          "right": 821,
+          "bottom": 624.9375,
+          "left": 562
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "1024x780",
+      "width": 1024,
+      "height": 780,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1024,
+          "scrollWidth": 1014
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 562,
+          "y": 573.4375,
+          "width": 259,
+          "height": 52,
+          "top": 573.4375,
+          "right": 821,
+          "bottom": 625.4375,
+          "left": 562
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "1025x781",
+      "width": 1025,
+      "height": 781,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1025,
+          "scrollWidth": 1015
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 563,
+          "y": 573.9375,
+          "width": 259,
+          "height": 52,
+          "top": 573.9375,
+          "right": 822,
+          "bottom": 625.9375,
+          "left": 563
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "1279x900",
+      "width": 1279,
+      "height": 900,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1279,
+          "scrollWidth": 1269
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 817,
+          "y": 641.8125,
+          "width": 259,
+          "height": 52,
+          "top": 641.8125,
+          "right": 1076,
+          "bottom": 693.8125,
+          "left": 817
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "1281x900",
+      "width": 1281,
+      "height": 900,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1281,
+          "scrollWidth": 1271
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 819,
+          "y": 642.0625,
+          "width": 259,
+          "height": 52,
+          "top": 642.0625,
+          "right": 1078,
+          "bottom": 694.0625,
+          "left": 819
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "1535x900",
+      "width": 1535,
+      "height": 900,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1535,
+          "scrollWidth": 1525
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 1050.5,
+          "y": 672.34375,
+          "width": 259,
+          "height": 52,
+          "top": 672.34375,
+          "right": 1309.5,
+          "bottom": 724.34375,
+          "left": 1050.5
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "1536x900",
+      "width": 1536,
+      "height": 900,
+      "zoom": 1,
+      "full": false,
+      "errors": [],
+      "failures": [],
+      "network": [],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1536,
+          "scrollWidth": 1526
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 1051,
+          "y": 672.484375,
+          "width": 259,
+          "height": 52,
+          "top": 672.484375,
+          "right": 1310,
+          "bottom": 724.484375,
+          "left": 1051
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "pass": true
+    },
+    {
+      "label": "zoom-1.25-1024x576",
+      "width": 1024,
+      "height": 576,
+      "zoom": 1.25,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "menu",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "manifiesto",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "servicios",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "video",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "contacto",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "form-errors",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "form-long",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "casos",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "resultados",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "nosotros",
+          "width": 1024,
+          "scrollWidth": 1014
+        },
+        {
+          "name": "footer",
+          "width": 1024,
+          "scrollWidth": 1014
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 562,
+          "y": 523.875,
+          "width": 259,
+          "height": 52,
+          "top": 523.875,
+          "right": 821,
+          "bottom": 575.875,
+          "left": 562
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.328125,
+          "width": 934,
+          "height": 64,
+          "top": 152.328125,
+          "right": 974,
+          "bottom": 216.328125,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 244.328125,
+          "width": 1014,
+          "height": 608,
+          "top": 244.328125,
+          "right": 1014,
+          "bottom": 852.328125,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0.328125,
+          "width": 1014,
+          "height": 576,
+          "top": 0.328125,
+          "right": 1014,
+          "bottom": 576.328125,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 0.65,
+          "activeSeconds": 1.900000000000001,
+          "inactiveSeconds": 0.9500000000000007,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18.95,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.900000000000001,
+          "lookBlend": 0,
+          "headStepDegrees": 0.12209513387643907,
+          "maxHeadStepDegrees": 2.321893992698522,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "zoom-1.5-853x480",
+      "width": 853,
+      "height": 480,
+      "zoom": 1.5,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "menu",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "manifiesto",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "servicios",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "video",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "contacto",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "form-errors",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "form-long",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "casos",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "resultados",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "nosotros",
+          "width": 853,
+          "scrollWidth": 843
+        },
+        {
+          "name": "footer",
+          "width": 853,
+          "scrollWidth": 843
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 391,
+          "y": 154.203125,
+          "width": 259,
+          "height": 52,
+          "top": 154.203125,
+          "right": 650,
+          "bottom": 206.203125,
+          "left": 391
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 40,
+          "y": 152.96875,
+          "width": 763,
+          "height": 53.3125,
+          "top": 152.96875,
+          "right": 803,
+          "bottom": 206.28125,
+          "left": 40
+        },
+        "scene": {
+          "x": 0,
+          "y": 234.28125,
+          "width": 843,
+          "height": 512,
+          "top": 234.28125,
+          "right": 843,
+          "bottom": 746.28125,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0.28125,
+          "width": 843,
+          "height": 480,
+          "top": 0.28125,
+          "right": 843,
+          "bottom": 480.28125,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 0.6,
+          "activeSeconds": 1.5000000000000007,
+          "inactiveSeconds": 0.9000000000000007,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18.6,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 1.5000000000000007,
+          "lookBlend": 0,
+          "headStepDegrees": 0.45963399360283863,
+          "maxHeadStepDegrees": 2.321948579955279,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    },
+    {
+      "label": "zoom-2-640x360",
+      "width": 640,
+      "height": 360,
+      "zoom": 2,
+      "full": true,
+      "errors": [],
+      "failures": [],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4175/api/contact",
+          "status": 503
+        }
+      ],
+      "checks": [
+        {
+          "name": "hero",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "menu",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "manifiesto",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "servicios",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "video",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "contacto",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "form-errors",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "form-long",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "casos",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "resultados",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "nosotros",
+          "width": 640,
+          "scrollWidth": 640
+        },
+        {
+          "name": "footer",
+          "width": 640,
+          "scrollWidth": 640
+        }
+      ],
+      "overflows": [],
+      "cta": {
+        "box": {
+          "x": 20,
+          "y": 94.390625,
+          "width": 259,
+          "height": 52,
+          "top": 94.390625,
+          "right": 279,
+          "bottom": 146.390625,
+          "left": 20
+        },
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "overlaps": false
+      },
+      "intro": {
+        "title": {
+          "x": 20,
+          "y": 152.640625,
+          "width": 600,
+          "height": 40,
+          "top": 152.640625,
+          "right": 620,
+          "bottom": 192.640625,
+          "left": 20
+        },
+        "scene": {
+          "x": 0,
+          "y": 220.640625,
+          "width": 640,
+          "height": 392,
+          "top": 220.640625,
+          "right": 640,
+          "bottom": 612.640625,
+          "left": 0
+        }
+      },
+      "video": {
+        "duration": 76.166667,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 360,
+          "top": 0,
+          "right": 640,
+          "bottom": 360,
+          "left": 0
+        }
+      },
+      "astronaut": {
+        "loaded": true,
+        "rendered": true,
+        "failed": false,
+        "disposed": false,
+        "reducedMotion": false,
+        "paused": false,
+        "modelUrl": "http://127.0.0.1:4175/astronaut/sykr4-astronaut-v4.glb",
+        "headJoint": "Head",
+        "idleClip": "Idle",
+        "waveClip": "Wave_One_Hand",
+        "wristClip": "Wrist_Check",
+        "militaryClip": "Military_Salute",
+        "behavior": {
+          "enabled": true,
+          "state": "clip",
+          "action": "wave",
+          "stateTime": 0.35,
+          "activeSeconds": 0.65,
+          "inactiveSeconds": 0.65,
+          "recognitionAfter": 4,
+          "curiosityAfter": 13,
+          "automaticAfter": 18,
+          "nextAutomaticAction": "wrist",
+          "automaticCount": 0,
+          "automaticGestures": true
+        },
+        "animation": {
+          "elapsed": 0.65,
+          "lookBlend": 0,
+          "headStepDegrees": 2.321816903587047,
+          "maxHeadStepDegrees": 2.321816903587047,
+          "headMaxAngularSpeed": 100
+        },
+        "visuals": {
+          "enabled": true,
+          "profile": "studio-v2",
+          "emissivePulseRange": [
+            0.96,
+            1
+          ],
+          "geometryModified": false,
+          "texturesModified": false
+        },
+        "jointNames": [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ],
+        "clipNames": [
+          "Wave_One_Hand",
+          "Idle",
+          "Wrist_Check",
+          "Military_Salute"
+        ],
+        "capabilities": {
+          "rotateBody": true,
+          "followCursor": true,
+          "wave": true,
+          "wristCheck": true,
+          "militarySalute": true,
+          "idle": true
+        },
+        "error": null
+      },
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> react-vite-tailwind@0.0.0 test
+> node --experimental-strip-types --test tests/*.test.*
+
+✔ Original astronaut runtime: focus, visibility, reduced motion, no-WebGL fallback and disposal (45.437952ms)
+✔ Astronaut component resolves assets against actual Vite base configuration (119.880548ms)
+✔ Included GLB retains authoritative bytes, embedded resources and all four V4 animation clips (11.142118ms)
+✔ Contact rejects invalid fields and focuses the first error (107.784731ms)
+✔ Contact without a destination downloads a named nonempty request and never claims delivery (8.381814ms)
+✔ Contact email mode encodes the request and asks the visitor to finish sending (18.432895ms)
+✔ Contact confirms only an acknowledged POST and endpoint takes priority over email (8.288383ms)
+✔ Contact preserves the request after negative acknowledgement (7.923793ms)
+✔ Contact preserves the request after HTTP failure (4.263101ms)
+✔ Contact preserves the request after HTML response instead of JSON (9.110222ms)
+✔ Contact preserves the request after network failure (9.966194ms)
+✔ Contact rejects email header injection in configuration (7.717322ms)
+✔ Contact unmount aborts an in-flight request without reporting success afterwards (6.862582ms)
+✔ Contact blocks concurrent submissions and keeps the same key for uncertain retries (12.791436ms)
+✔ Contact does not send identical accepted content twice (9.952073ms)
+✔ Contact carries a service choice into the form without duplicating or losing data (6.386244ms)
+✔ server only accepts success after provider acknowledgement and formats the real request (42.856578ms)
+✔ unconfigured server reports 503 honestly and never calls a provider (16.524092ms)
+✔ server rejects malformed fields, long data, unknown services and honeypot submissions (21.456296ms)
+✔ server enforces origin, JSON and payload size (17.296912ms)
+✔ concurrent duplicates and retries send once; changed payload cannot reuse an id (40.212189ms)
+✔ basic rate limiting stops repeated attempts (14.802119ms)
+✔ the existing orientation option is accepted alongside the five service areas (2.308623ms)
+✔ provider negative response never produces success (4.243321ms)
+✔ provider missing id never produces success (8.068652ms)
+✔ provider network error never produces success (4.519488ms)
+✔ a single large downward jump cannot bypass the entire video (0.892215ms)
+✔ a first visit from below captures even a jump past the entire video (0.118579ms)
+✔ ordinary movement that does not reach the scene remains free (0.138028ms)
+✔ landing exactly on either entrance is a visit (0.122274ms)
+✔ starting exactly at a boundary does not leave a capture gap (0.156185ms)
+✔ a scroll landing within the narrow interval captures in either direction (0.097136ms)
+✔ stationary observations and synthetic identical coordinates do not start playback (0.200463ms)
+✔ End and Home projections still capture rather than bypassing the scene (0.323608ms)
+✔ an already playing scene cannot engage a second session (0.290268ms)
+✔ completion allows a legitimate exit without recapturing its release nudge (0.188825ms)
+✔ immediate reversal after either completion opens a new visit (0.102424ms)
+✔ release nudges and small boundary jitter do not rearm the same exit (0.09979ms)
+✔ a genuine exit rearms future visits while leaving outward scroll free (0.144027ms)
+✔ downward and upward visits can repeat for multiple complete cycles (0.103035ms)
+✔ capture follows current geometry after resize, including a zero-width interval (0.383218ms)
+✔ a native scroll that jumps past the entire scene physically returns to its top (62.570096ms)
+✔ explicit top navigation pauses a partial visit and rearms repeated manual visits (37.664897ms)
+✔ top navigation from below never plays the video and clears state even if interrupted by an exception (12.374246ms)
+✔ restoring a position inside the scene captures a fresh visit (12.185552ms)
+✔ Ctrl+wheel zoom is never swallowed by the video (15.15473ms)
+✔ a huge wheel entry is cancelled, starts at 1× and only later gestures accelerate (52.147964ms)
+✔ finishing releases only downwards; an immediate return rewinds and can replay again (21.256795ms)
+✔ a full exit rearms the scene for a fast reverse visit and a later forward visit (14.181923ms)
+✔ End and Home intercept jumps across the scene in either direction (15.023723ms)
+✔ typing in the contact form and activating buttons does not capture navigation keys (13.778765ms)
+✔ touch entry cannot jump over the scene and pinch gestures remain untouched (8.508425ms)
+✔ entry before metadata retains the lock and starts playback when metadata arrives (11.441349ms)
+✔ a stalled load releases the page and offers a working retry (26.754509ms)
+✔ a media error releases the page immediately (13.189947ms)
+✔ a background tab does not count as a stalled media load (8.132037ms)
+✔ a layout resize moves the scroll anchor without resetting video progress (13.287775ms)
+✔ reduced-motion mode leaves scroll free until the visitor explicitly plays (23.977875ms)
+ℹ tests 58
+ℹ suites 0
+ℹ pass 58
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1189.692698

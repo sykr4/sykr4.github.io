@@ -1,0 +1,48 @@
+.astronaut-card {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  border: 1px solid rgb(214 255 74 / 0.15);
+  border-radius: 32px;
+  background: radial-gradient(ellipse at 50% 42%, rgb(141 168 82 / 0.09), transparent 65%), rgb(10 12 19 / 0.78);
+}
+.astronaut-card__signal {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 24px 24px 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: #b7c28b;
+}
+.astronaut-card__dot { width: 5px; height: 5px; background: var(--color-volt); border-radius: 50%; }
+.astronaut-card__viewport { position: relative; min-height: 480px; }
+.astronaut-card__host { position: relative; z-index: 1; min-height: 480px; }
+.astronaut-card__placeholder { position: absolute; inset: 0; width: 100%; height: 480px; object-fit: contain; pointer-events: none; }
+.astronaut-card__caption { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 15px 16px 20px; text-align: center; }
+.astronaut-card__caption p { font-size: 12px; line-height: 1.6; color: #a3ac9b; }
+.astronaut-card__pause { min-height: 36px; padding: 4px 12px; color: #cdd5c3; font-size: 11px; text-decoration: underline; text-underline-offset: 4px; }
+.sykr4-astronaut { position: relative; width: 100%; color: #f2f0e9; }
+.sykr4-astronaut__stage { position: relative; width: 100%; height: 480px; }
+.sykr4-astronaut__canvas, .sykr4-astronaut__fallback { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
+.sykr4-astronaut__canvas { touch-action: pan-y pinch-zoom; cursor: grab; }
+.sykr4-astronaut__canvas.is-dragging { cursor: grabbing; }
+.sykr4-astronaut [hidden] { display: none !important; }
+.sykr4-astronaut__controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; min-height: 44px; }
+.sykr4-astronaut__try { width: fit-content; max-width: 100%; margin: 2px auto 0; padding: 0 12px; text-align: center; }
+.sykr4-astronaut__try summary { min-height: 44px; padding: 12px 16px; color: #c5d0bf; cursor: pointer; font-size: 12px; }
+.sykr4-astronaut__try[open] .sykr4-astronaut__controls { margin-top: 6px; }
+.sykr4-astronaut__controls button { min-height: 44px; padding: 9px 13px; border: 1px solid rgb(214 255 74 / 0.25); border-radius: 999px; background: #161b17; color: inherit; font: inherit; font-size: 12px; cursor: pointer; }
+.sykr4-astronaut__controls button:hover { border-color: var(--color-volt); }
+.sykr4-astronaut__controls button:disabled { opacity: 0.45; cursor: default; }
+.sykr4-astronaut__sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 767px) {
+  .astronaut-card__viewport, .astronaut-card__host { min-height: 360px; }
+  .sykr4-astronaut__stage, .astronaut-card__placeholder { height: 360px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sykr4-astronaut__canvas { cursor: default; }
+}
