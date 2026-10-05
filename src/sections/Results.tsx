@@ -99,7 +99,7 @@ export function Results() {
             className="font-display text-[clamp(2.4rem,6vw,5.6rem)] font-semibold leading-[0.98] tracking-[-0.045em]"
           />
           <p className="max-w-md text-mute lg:justify-self-end">
-            Cada proyecto empieza por una necesidad concreta. Acordamos qué incluye, cómo lo comprobaremos y quién se encarga de cada parte. Las ampliaciones y el mantenimiento se definen por separado.
+            Empezamos por lo que necesitas resolver. Antes de trabajar, acordamos qué incluye el proyecto, cómo comprobaremos que funciona y quién se ocupa de cada parte. Las ampliaciones y el mantenimiento se acuerdan por separado.
           </p>
         </div>
 

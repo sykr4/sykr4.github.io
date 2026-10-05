@@ -6,12 +6,14 @@ import { SectionLabel } from "@/components/ui";
 type ChipKind = "stack" | "bolt" | "cloud";
 const TOKENS: { t: string; cls?: string; chip?: ChipKind }[] = [
   { t: "Tu" }, { t: "web," }, { t: "tus" }, { t: "aplicaciones" }, { t: "y" },
-  { t: "tu" }, { t: "infraestructura", cls: "text-gradient", chip: "stack" },
-  { t: "forman" }, { t: "parte" }, { t: "del" }, { t: "mismo" }, { t: "negocio." },
-  { t: "Las" }, { t: "trabajamos" }, { t: "juntas", cls: "volt-underline", chip: "bolt" },
-  { t: "para" }, { t: "que" }, { t: "la" }, { t: "información" }, { t: "fluya," },
-  { t: "las" }, { t: "tareas" }, { t: "se" }, { t: "simplifiquen" }, { t: "y" },
-  { t: "sepas" }, { t: "qué" }, { t: "mejorar.", cls: "text-gradient", chip: "cloud" },
+  { t: "los" }, { t: "sistemas", cls: "text-gradient", chip: "stack" },
+  { t: "que" }, { t: "las" }, { t: "hacen" }, { t: "funcionar" }, { t: "forman" },
+  { t: "parte" }, { t: "del" }, { t: "mismo" }, { t: "negocio." },
+  { t: "Los" }, { t: "conectamos", cls: "volt-underline", chip: "bolt" }, { t: "y" },
+  { t: "mejoramos" }, { t: "para" }, { t: "que" }, { t: "tu" }, { t: "equipo" },
+  { t: "tenga" }, { t: "la" }, { t: "información" }, { t: "que" }, { t: "necesita" },
+  { t: "y" }, { t: "dedique" }, { t: "menos" }, { t: "tiempo" }, { t: "a" },
+  { t: "tareas" }, { t: "repetitivas.", cls: "text-gradient", chip: "cloud" },
 ];
 
 function Chip({ kind }: { kind: ChipKind }) {
@@ -71,7 +73,7 @@ export function Manifesto() {
           ))}
         </h2>
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-mute">
-          <span>Partimos de tu proceso</span>
+          <span>Entendemos cómo trabajas</span>
           <span className="text-cyan">✦</span>
           <span>Aprovechamos lo que ya usas</span>
           <span className="text-cyan">✦</span>

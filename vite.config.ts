@@ -19,6 +19,9 @@ export default defineConfig(({ mode }) => {
   return {
   // sykr4.github.io is a user site and sykr4.com points to the root, so assets must resolve from /.
   base: "/",
+  server: {
+    allowedHosts: ["far-findings-shared-accuracy.trycloudflare.com"],
+  },
   plugins: [react(), tailwindcss(), viteSingleFile(), {
     name: "sykr4-contact-server",
     configureServer(server) { server.middlewares.use(middleware); },

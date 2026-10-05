@@ -1,0 +1,499 @@
+{
+  "name": "SYKR4_WEB_FINAL_V1",
+  "version": "1.0.0-textos-actualizados",
+  "generated": "2026-10-03",
+  "files": [
+    {
+      "path": ".env.example",
+      "size": 796,
+      "sha256": "53ff48b7c1b35a4b3faa669dd607131450818b712f81cc2830749aeae128b52d"
+    },
+    {
+      "path": ".env.production",
+      "size": 346,
+      "sha256": "5be8bb7b80be80eb4a7bf9715e9ad2c9737e36eb9734f2d0f1eee81b8ceab200"
+    },
+    {
+      "path": ".github/workflows/deploy-pages.yml",
+      "size": 1055,
+      "sha256": "cd13d6b73183e0d0d8a9d012ce8e0a1496b3b01b4da5f9899240e1a41ec242ef"
+    },
+    {
+      "path": ".gitignore",
+      "size": 102,
+      "sha256": "bb417d33c43624261dc21c0ea6b32ddf48fcbc479a0f3724198a0361ec3b984f"
+    },
+    {
+      "path": "AUDITORIA_CAMBIOS.md",
+      "size": 15135,
+      "sha256": "68cb343bdedbfd56987733857e427d28165a1278913ddd947adf8a1ebccd1aad"
+    },
+    {
+      "path": "AUDITORIA_FINAL_V1.md",
+      "size": 6004,
+      "sha256": "37b1840951eccfed2edf1ab95e4b825076f041dcb2ac6fa44f13b72bf232cab4"
+    },
+    {
+      "path": "CONTACTO_ASTRONAUTA.md",
+      "size": 5111,
+      "sha256": "e54a60261cf500c7c345204c9c26ee23e2b9dd49408d940c4bef0f18795a3f19"
+    },
+    {
+      "path": "GITHUB_PAGES.md",
+      "size": 1961,
+      "sha256": "7d9f76e732cd5ebc989108a8f9a145f98b42e096dec84f92f3ab39e645fd721a"
+    },
+    {
+      "path": "INICIAR_LOCAL.sh",
+      "size": 328,
+      "sha256": "1631e28f7f4a1ba04410b79a3ba038e82554e5e362b48341d27319dccca98f47"
+    },
+    {
+      "path": "README_ENTREGA.md",
+      "size": 3742,
+      "sha256": "73ad052973420cf0658cc9b5c57afdadc456ce0a8dedec3174d50338a3e6ba37"
+    },
+    {
+      "path": "README_FINAL_V1.md",
+      "size": 3742,
+      "sha256": "73ad052973420cf0658cc9b5c57afdadc456ce0a8dedec3174d50338a3e6ba37"
+    },
+    {
+      "path": "docs/CAMBIOS_V12.md",
+      "size": 2548,
+      "sha256": "41181834b1860d6dc1a35b50a6f49b46572113190cf714166dab2a89ea2567c2"
+    },
+    {
+      "path": "docs/CAMBIOS_V13.md",
+      "size": 2030,
+      "sha256": "0fd907da4b63f385249efe070aab186c9d29b8bf0353f98c80e0efefc4c9b1ac"
+    },
+    {
+      "path": "docs/COPY_FINAL_V11.md",
+      "size": 44415,
+      "sha256": "bf725f2534be1d629d5c6f8750d976882a7141508c26aea27fa22eabfea808db"
+    },
+    {
+      "path": "docs/EVALUACION_WEB_V13.md",
+      "size": 7934,
+      "sha256": "211b5373a2e72f601d149386c93aafeb16da51e3c1265b1882c3dca01f669ac2"
+    },
+    {
+      "path": "docs/FINAL_V1_TEST_RESULTS.txt",
+      "size": 2054,
+      "sha256": "ffbdf4f6b9d77e3384e87d8e12aa9288aac76ca0592aa36b30094d56b4134075"
+    },
+    {
+      "path": "docs/FIX_REBOBINADO_2026-10-02.md",
+      "size": 1867,
+      "sha256": "a3ee56d17303a877ab6edb9211cefb62f0e2b46aa2465862243d9c48e1e59abd"
+    },
+    {
+      "path": "docs/INFORME_REVISION_V10.md",
+      "size": 16065,
+      "sha256": "996fb39f752e38cbf1a3248382e1b4b861be93b32543c4fbe23eb88912eb10e5"
+    },
+    {
+      "path": "docs/MAPA_SERVICIOS_V11.md",
+      "size": 19592,
+      "sha256": "f29d62c97c49bc35f9c3bb061f725cbb43b58afde519eac1332618ae6b3efea3"
+    },
+    {
+      "path": "docs/QA_CODIGO_V11.txt",
+      "size": 5311,
+      "sha256": "6f6d0abbdaf194b4786ef7c6b8701533b474d643a045e0acfb8699295b44b720"
+    },
+    {
+      "path": "docs/QA_CODIGO_V12.txt",
+      "size": 5330,
+      "sha256": "3c83688c74ddfd646f07ef1f546b491af9ed32a58df6159ba507c52ae46b7c59"
+    },
+    {
+      "path": "docs/README_V10_HISTORICO.md",
+      "size": 4867,
+      "sha256": "ec37c74876407b43dce8e241401a3dcbe082884bbbb85daa1349187e50481532"
+    },
+    {
+      "path": "docs/REWIND_FIX_TEST_RESULTS.txt",
+      "size": 1170,
+      "sha256": "1f5631f61931941df5639e310caa15689b3edeb6db19a4bb3e0d7ffac12b246b"
+    },
+    {
+      "path": "docs/historico/AUDITORIA_V13_2026-09-29.md",
+      "size": 1903,
+      "sha256": "002a80fca19d78069d0989e29e502db7c6a2a0886348e4195368ea2f216b9b07"
+    },
+    {
+      "path": "docs/historico/MANIFEST_V13.json",
+      "size": 61065,
+      "sha256": "0b37a4b11b25bd951797496f138aa663fc8a022e23de4a39d4ead8985def85a1"
+    },
+    {
+      "path": "index.html",
+      "size": 1629,
+      "sha256": "04df4db9096804c2f0dcd2c51bc27332836ff1595bac67ee341518e129bba679"
+    },
+    {
+      "path": "package-lock.json",
+      "size": 110592,
+      "sha256": "1c33a2dc41e15127334935dccabe3437dee5eb453fb548ebd60d12ad2ec3a596"
+    },
+    {
+      "path": "package.json",
+      "size": 1290,
+      "sha256": "e72b7d16801aeddf459eae8cbe85a8b4104422f06562b3dce885fbf0ab5c7aba"
+    },
+    {
+      "path": "playwright.config.ts",
+      "size": 905,
+      "sha256": "51c69a876294398eaa47c102f5242d62f158719cbe6cffeb2df536220a1a96e6"
+    },
+    {
+      "path": "public/SYKR4_6_Planetas_WEB_720p.mp4",
+      "size": 22042473,
+      "sha256": "9548e3f83602673d57563b7c75b39dea6317e71c253c5e9a77066d73e2d1c4ad"
+    },
+    {
+      "path": "public/astronaut/runtime.mjs",
+      "size": 820774,
+      "sha256": "a61e95dae2a2a35a2b5b790eb195e3acf26ce6673ad0de6bd7f559800461ee2c"
+    },
+    {
+      "path": "public/astronaut/sykr4-astronaut-preview.png",
+      "size": 326284,
+      "sha256": "2ab2cb83d92be6fe876490421ee83d3e6447fc06c078248cf53b00f0eb31d64e"
+    },
+    {
+      "path": "public/astronaut/sykr4-astronaut-v4.glb",
+      "size": 8605864,
+      "sha256": "1881085722f3d462d6ba6ead6698dd6bfb447a61f21b42789df555818dea8083"
+    },
+    {
+      "path": "public/examples/particles-trail.html",
+      "size": 16357,
+      "sha256": "c5ef502a857e33580553eea8c67f8b6c5800856fcd201397acaa3603f7e6705a"
+    },
+    {
+      "path": "public/images/case-ai.jpg",
+      "size": 207043,
+      "sha256": "203eb2a9f30dc33752a82b7824be16cb19166e17a1ba6a6c3fa518e32f81fe36"
+    },
+    {
+      "path": "public/images/case-cloud.jpg",
+      "size": 227986,
+      "sha256": "2d01e8b4317a9c61eef71abb1d4024b76b01ca1ce6cb0a79250e48bf3f3065ab"
+    },
+    {
+      "path": "public/images/case-digital.jpg",
+      "size": 215236,
+      "sha256": "ee1ac60d62fc77d6871b0ee8b245cae99cc8b6e27d7ce28e9777b2acd29c4225"
+    },
+    {
+      "path": "public/images/case-servers.jpg",
+      "size": 308731,
+      "sha256": "8627c460726f4f12d620dce2560641c967d428fe264a459156f07e622de47591"
+    },
+    {
+      "path": "public/images/sykr4-planetas-poster.jpg",
+      "size": 91298,
+      "sha256": "da575f23551277a14c69997ac686230025f10fe362ce8c7fad5800b815bbbe7c"
+    },
+    {
+      "path": "scripts/package.mjs",
+      "size": 2055,
+      "sha256": "b448c55a7f7f0c9924ef334517a825259059bdadd2ba0ac96fb35ab6d084a039"
+    },
+    {
+      "path": "scripts/qa/baseline.mjs",
+      "size": 2196,
+      "sha256": "755e1e19f0a5a282fc232dc03a7b7622f7f263766378dae3a4dd7107edbefaab"
+    },
+    {
+      "path": "scripts/qa/production-smoke.mjs",
+      "size": 2110,
+      "sha256": "d0d810cb0c6a692b8ebb4726a007117a36a79dbba1bc03a2ea1f10463b5bc47e"
+    },
+    {
+      "path": "scripts/qa/responsive.mjs",
+      "size": 7766,
+      "sha256": "da14c7252190cddb22dc86138e84ac752f9c11e55b3bb5ed996eb43e00893264"
+    },
+    {
+      "path": "scripts/qa/scrollbar-probe.mjs",
+      "size": 1232,
+      "sha256": "10db04bdcbd927be2ad6eaad7c7a1c9dba91b2f04486edcd1f0ef3472226c7da"
+    },
+    {
+      "path": "scripts/qa/services.mjs",
+      "size": 1424,
+      "sha256": "f8642afdfb4c989be91200c566e8510d2ea7747f37b4c62639789b6fac89dc68"
+    },
+    {
+      "path": "scripts/qa/walkthrough.mjs",
+      "size": 3392,
+      "sha256": "49733a5b8802233a342461018cf4641bbf9e66b61a00197d4c34c3373a911cf6"
+    },
+    {
+      "path": "server/contact.ts",
+      "size": 6782,
+      "sha256": "fd23cf71c2d3bd0b4e53fa5a3f36aa31debadbba563f26d310e86026b859dc7a"
+    },
+    {
+      "path": "server/index.ts",
+      "size": 3057,
+      "sha256": "8e071c1270f0dba01829e9d665c295455ab695f9d791c5407a77b9c214088975"
+    },
+    {
+      "path": "shared/contact.ts",
+      "size": 2072,
+      "sha256": "ba35498ce4024027acf67e932cb4d4e1242890d46643d3936cfad200ec2d4786"
+    },
+    {
+      "path": "src/App.tsx",
+      "size": 3512,
+      "sha256": "58f136d705aacfb290f616a96eec4090132f6cefc9f5d6fd50919a03e1a2fdbc"
+    },
+    {
+      "path": "src/components/Astronaut.tsx",
+      "size": 5895,
+      "sha256": "977694c768f411a6ed11d24dd145d2f81956a8f373b8e3a1a2dcd0f91705619e"
+    },
+    {
+      "path": "src/components/Cursor.tsx",
+      "size": 3954,
+      "sha256": "202439f0432b0160b941f5454f461af6f5c1a482910671f4d32e60105f3613d8"
+    },
+    {
+      "path": "src/components/Nav.tsx",
+      "size": 13633,
+      "sha256": "4d8703bb2249a5a7419b7cf4ad8c1ce54e43f0fa3ef96674a620d7733c753ff1"
+    },
+    {
+      "path": "src/components/ParticleBackground.tsx",
+      "size": 3433,
+      "sha256": "741d659161d7b889eb4f55f938e81a34a40d420b39e21f393ac30b1f44c2dda7"
+    },
+    {
+      "path": "src/components/Preloader.tsx",
+      "size": 4250,
+      "sha256": "a07f513dbcc82bda87b6000a2e8bbd015d67e26c0142cc2dfd79802b2b2917c9"
+    },
+    {
+      "path": "src/components/SectionIndicator.tsx",
+      "size": 1947,
+      "sha256": "93bb197fc14d52c902b21ae49cd9aa9b8da905f97ba3b2a51453196790dbefb8"
+    },
+    {
+      "path": "src/components/TrailCanvas.tsx",
+      "size": 1095,
+      "sha256": "2255c0dc4a255fb0643602f5b426d2ab4479b5253d3f72021b3b72af64c8b3c7"
+    },
+    {
+      "path": "src/components/astronaut.css",
+      "size": 3003,
+      "sha256": "ec0e192041121e7e8603fa07adc74482a845057f32c856c137c4019298edeb65"
+    },
+    {
+      "path": "src/components/icons.tsx",
+      "size": 5972,
+      "sha256": "a141aaa2c68c616fb2c7bdd428d1b236705a4f0de33b8c599b7aafb8ec16b135"
+    },
+    {
+      "path": "src/components/ui.tsx",
+      "size": 9231,
+      "sha256": "8a2ed619f0596c4bcec94dfb087b00b0d0ab2f595b146078b92ec5655eb2bc12"
+    },
+    {
+      "path": "src/data/content.ts",
+      "size": 22702,
+      "sha256": "52f549faff3571554045631249757fc8a99907cc9b4ad66607892b6403335a5e"
+    },
+    {
+      "path": "src/gl/FluidTrail.ts",
+      "size": 7793,
+      "sha256": "8c423fcbc9d721c744bcbfe8b18c6c8ab67d219e9d058f6440d2eb58b6892d25"
+    },
+    {
+      "path": "src/gl/ImageDistort.ts",
+      "size": 8080,
+      "sha256": "3bff11c50291e96468cfecf3d9afa229088b56f52e869aedce2a7383941f4e16"
+    },
+    {
+      "path": "src/gl/ParticleField.ts",
+      "size": 12251,
+      "sha256": "0c0bccd0d293590c9302c8854c64c5b1b26b7e04984b5686c8e6d2d033748a1f"
+    },
+    {
+      "path": "src/gl/shaders.ts",
+      "size": 6084,
+      "sha256": "e694cede33ae4f31358c340682020cb3e878e4bfb71a46f0559f0f3264c91904"
+    },
+    {
+      "path": "src/gl/shapes.ts",
+      "size": 8454,
+      "sha256": "5d517cf36e56522157b6548a24e4420969477415b2a59d1987cf80d23fdd181e"
+    },
+    {
+      "path": "src/index.css",
+      "size": 8598,
+      "sha256": "4e40af245e51d600fc332e07d7dcb3fbde4f9bc051e33ede7e9aebc110274306"
+    },
+    {
+      "path": "src/lib/device.ts",
+      "size": 2263,
+      "sha256": "1837a33272ddc91bbbc997a12f5d4d9740c57b1b12cfb974492945157cb52af1"
+    },
+    {
+      "path": "src/lib/hooks.ts",
+      "size": 1989,
+      "sha256": "e41281ba18cd406c13f4c3c8f4e9f27d1c9d694fcb28a48bfa91d2faa42a54fd"
+    },
+    {
+      "path": "src/lib/loop.ts",
+      "size": 3382,
+      "sha256": "27e7e367ab5337bddd26b26244d191a3c9c55cb3626e820e822017228bad983c"
+    },
+    {
+      "path": "src/lib/quality.tsx",
+      "size": 595,
+      "sha256": "13608d1ab3877115d4669141c1d3b5df1d1e940043abcdcc24ae11243544247f"
+    },
+    {
+      "path": "src/lib/scroll.ts",
+      "size": 4503,
+      "sha256": "c32e21c16ab689ccac7bb7a7d3ca699380b666e911b475a663732bd1356ba944"
+    },
+    {
+      "path": "src/lib/scrollRestoration.ts",
+      "size": 1546,
+      "sha256": "a27ae9f1d3438dfa16f2c7d04ba57d364b84ffcf6a203576c975a59f76492cc6"
+    },
+    {
+      "path": "src/lib/topNavigation.ts",
+      "size": 1206,
+      "sha256": "6532bc40dc9c3b5d113e809fd04bbf62902b2cafc54599ec6694825e4815389d"
+    },
+    {
+      "path": "src/lib/videoGate.ts",
+      "size": 1203,
+      "sha256": "f3f69bdf49d378e4d04f0edcdce4c06e6ea6642d38da840070aa5d59acc1141e"
+    },
+    {
+      "path": "src/main.tsx",
+      "size": 380,
+      "sha256": "dee00b14e91ebe15556983e3797b98c29d9186ace5782683d91191af8c096021"
+    },
+    {
+      "path": "src/sections/About.tsx",
+      "size": 8038,
+      "sha256": "37ebb43d6943f1bb1392d71432d43e057983eee04ba7bf42c94fd072f8668e62"
+    },
+    {
+      "path": "src/sections/Cases.tsx",
+      "size": 8459,
+      "sha256": "1ecdf6c0b736fd7620f391881549b340cf033e96dc8ca69ea37f9dad9e3c1d8a"
+    },
+    {
+      "path": "src/sections/Contact.tsx",
+      "size": 18296,
+      "sha256": "5001947281ee800ced686b5d12facfe4720eac3e37015f7f5e087fa470d7e2be"
+    },
+    {
+      "path": "src/sections/Footer.tsx",
+      "size": 4083,
+      "sha256": "9bed91051a221c391cf1dbfca5743cc4eabb774991ebc4816204036e0429f41b"
+    },
+    {
+      "path": "src/sections/Hero.tsx",
+      "size": 9371,
+      "sha256": "02d66a485289e2e1067ecceb9c7c280669eb085f03cd843ca5a5b3a8d68a2ab7"
+    },
+    {
+      "path": "src/sections/Manifesto.tsx",
+      "size": 3801,
+      "sha256": "67ee248c1d688e1912cd702d8b71baba659b3478499cea188b63b2c0285c7788"
+    },
+    {
+      "path": "src/sections/Results.tsx",
+      "size": 5451,
+      "sha256": "4fc6b2660c8b81b0a2b2708cef3b183f3c9f16b1d593302f6126c7807a18de70"
+    },
+    {
+      "path": "src/sections/Services.tsx",
+      "size": 18391,
+      "sha256": "246d866cbef033f4d33f12bb9d65074d8ae2b3e86efdf5d13b06ed75db2a7c07"
+    },
+    {
+      "path": "src/sections/VideoStory.tsx",
+      "size": 31973,
+      "sha256": "fdb34380ee885f4dc972249cc2f3f4c4b5bb5a6aeaa9514f2d353efa1731ea8f"
+    },
+    {
+      "path": "src/utils/cn.ts",
+      "size": 169,
+      "sha256": "d1f1e0d62cb8d8d1e04c26e14de842d8a151f75812d81b046c65b5d1fe8e4b27"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "size": 203,
+      "sha256": "66d921b7f7993c348622c31d7f69d48bb2b34acdb8e3987c9e07bfdc8f3b2d39"
+    },
+    {
+      "path": "tests/assetsFinal.test.mjs",
+      "size": 1708,
+      "sha256": "d6a832a54aab4ce5a4da02958ba6b4c3624807e955ba4aa2f4121d73eef73edc"
+    },
+    {
+      "path": "tests/astronaut.test.mjs",
+      "size": 7115,
+      "sha256": "d872195305dccaf73322fc556f41989092da0f88c678c23dd3af501ee4396d93"
+    },
+    {
+      "path": "tests/browser/input.spec.ts",
+      "size": 5663,
+      "sha256": "58f8d0a9883ad8ed55bbc9a1cd4c5de7c344268ed7b145d43e0bf6104303414e"
+    },
+    {
+      "path": "tests/browser/scroll.spec.ts",
+      "size": 10267,
+      "sha256": "51de95b823ced19e051a69a2f376efe3233350200fa58f8a85eba58e0958e114"
+    },
+    {
+      "path": "tests/contact.test.mjs",
+      "size": 9820,
+      "sha256": "0050ef840f08510cdc6154933d838763ee54d5bd968a202b4a19d1d8550f6554"
+    },
+    {
+      "path": "tests/contactServer.test.ts",
+      "size": 5034,
+      "sha256": "2c3aecf806a187f840ee8da8229c9aa8833d06c71942b8eea819bbc4e4a4947b"
+    },
+    {
+      "path": "tests/layoutFinal.test.mjs",
+      "size": 3143,
+      "sha256": "e2a9e73fe42cd488909a87ca0c65574f8f2679b99b9c517a426cad1036f163bf"
+    },
+    {
+      "path": "tests/videoGate.test.ts",
+      "size": 5376,
+      "sha256": "03f6ee94c23f103a9e53e1fe7d230fcf27b6c11ee22982e8e4112eb6af6aa311"
+    },
+    {
+      "path": "tests/videoStory.test.mjs",
+      "size": 18532,
+      "sha256": "fda4d61d1c1202be4e6d8e0450da2c364ba4fe7c97ba905dec6d1d2bf6684aea"
+    },
+    {
+      "path": "tsconfig.json",
+      "size": 701,
+      "sha256": "4fe1dd8b5fec1e6ee47c2fcfb6f07346183780d29107fe341f08ada929c791da"
+    },
+    {
+      "path": "vite.config.ts",
+      "size": 1252,
+      "sha256": "ef73a80bd3b79947990daa7f653575bb07892fb9b57dd466984cb1550f76a0f3"
+    }
+  ],
+  "file_count": 98,
+  "total_bytes": 33546821
+}

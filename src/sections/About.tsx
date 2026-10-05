@@ -47,7 +47,7 @@ export function About() {
           onPointerEnter={() => setRadius("200px")}
           onPointerLeave={() => setRadius("0px")}
           data-cursor="Hola"
-          className="relative h-auto min-h-[600px] overflow-hidden rounded-[32px] border border-white/10 bg-ink-2"
+          className="relative h-auto min-h-[560px] overflow-hidden sm:min-h-[600px] rounded-[32px] border border-white/10 bg-ink-2"
           style={{ transition: "--rr 0.8s cubic-bezier(0.16, 1, 0.3, 1)" }}
         >
           <div
@@ -60,30 +60,30 @@ export function About() {
             style={{ WebkitMaskImage: mask, maskImage: mask }}
           />
           <div aria-hidden className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:48px_48px]" />
-          <div className="relative flex min-h-[600px] flex-col p-5 sm:p-8">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan">Equipo multidisciplinar</p>
+          <div className="relative flex min-h-[560px] flex-col p-5 sm:min-h-[600px] sm:p-8">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan">Un equipo, varias especialidades</p>
             <p className="mt-4 max-w-sm font-display text-[clamp(1.6rem,3vw,2.7rem)] font-medium leading-[1.06] tracking-[-0.035em]">Liderazgo técnico en cada proyecto.</p>
             <div className="my-auto grid gap-4 py-6">
               <div className="rounded-2xl border border-white/15 bg-ink/70 p-4 backdrop-blur-sm sm:p-5">
-                <p className="text-[11px] font-medium leading-relaxed text-cyan">Responsable de arquitectura y seguridad</p>
+                <p className="text-[11px] font-medium leading-relaxed text-cyan">Responsable de arquitectura tecnológica y seguridad</p>
                 <p className="mt-2 font-display text-2xl font-medium tracking-[-0.03em]">Enrique Acón</p>
                 <div className="mt-4 flex items-center gap-3 border-t border-white/10 pt-3">
                   <span className="font-display text-4xl font-medium leading-none tracking-[-0.04em] text-bone">10</span>
                   <span className="max-w-[7rem] text-xs leading-snug text-bone/80">años de experiencia</span>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-mute">Sistemas, arquitectura AWS, costes cloud, ciberseguridad y Microsoft 365.</p>
+                <p className="mt-3 text-sm leading-relaxed text-mute">Diseño y gestión de sistemas en AWS, control de costes, ciberseguridad y Microsoft 365.</p>
               </div>
               <div className="rounded-2xl border border-white/15 bg-ink/70 p-4 backdrop-blur-sm sm:p-5">
-                <p className="text-[11px] font-medium leading-relaxed text-cyan">Responsable de desarrollo e integraciones</p>
+                <p className="text-[11px] font-medium leading-relaxed text-cyan">Responsable de desarrollo y conexión de aplicaciones</p>
                 <p className="mt-2 font-display text-2xl font-medium tracking-[-0.03em]">Javier Millán</p>
                 <div className="mt-4 flex items-center gap-3 border-t border-white/10 pt-3">
                   <span className="font-display text-4xl font-medium leading-none tracking-[-0.04em] text-bone">5</span>
                   <span className="max-w-[7rem] text-xs leading-snug text-bone/80">años de experiencia</span>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-mute">Programación, sistemas, aplicaciones web e integración de plataformas mediante APIs.</p>
+                <p className="mt-3 text-sm leading-relaxed text-mute">Programación, sistemas, aplicaciones web y conexión entre las herramientas de tu empresa.</p>
               </div>
             </div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute">Experiencia · Visión conjunta · Trato directo</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute">Experiencia · Trabajo en equipo · Trato directo</p>
           </div>
         </div>
 
@@ -96,10 +96,10 @@ export function About() {
             className="mt-8 font-display text-[clamp(2.1rem,4.2vw,4rem)] font-semibold leading-[1.03] tracking-[-0.04em]"
           />
           <p className="mt-8 max-w-lg text-[17px] leading-relaxed text-mute">
-            En SYKR4 reunimos experiencia en sistemas, arquitectura cloud, seguridad y desarrollo. Un equipo multidisciplinar para abordar tu proyecto con una visión completa, desde el proceso de negocio hasta la tecnología que lo sostiene.
+            En SYKR4 unimos experiencia en sistemas, servicios en la nube, seguridad y desarrollo. Nuestro equipo trabaja de forma coordinada para entender cómo funciona tu empresa y crear soluciones que encajen en tu día a día.
           </p>
           <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-mute">
-            Enrique y Javier están al frente de las áreas técnicas. Aportan criterio para definir prioridades, coordinar las distintas especialidades y acompañarte desde las primeras decisiones hasta la puesta en marcha.
+            Enrique y Javier dirigen las áreas técnicas y coordinan al equipo. Te ayudan a decidir qué hacer primero y te acompañan desde la primera conversación hasta la puesta en marcha.
           </p>
 
           <div className="mt-10 divide-y divide-white/10 border-y border-white/10">

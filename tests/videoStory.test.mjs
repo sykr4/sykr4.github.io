@@ -27,7 +27,7 @@ const mocks = {
 };
 const built = await build({
   absWorkingDir: project,
-  stdin: { contents: `export { VideoStory } from './src/sections/VideoStory.tsx'; export { navigateDirectlyToTop, isReturningToTop } from './src/lib/topNavigation.ts';`, resolveDir: project, loader: 'ts' },
+  stdin: { contents: `export { VideoStory } from './src/sections/VideoStory.tsx'; export { navigateDirectlyToTop, navigateDirectlyToTarget, isReturningToTop, isBypassingVideo } from './src/lib/topNavigation.ts';`, resolveDir: project, loader: 'ts' },
   bundle: true,
   write: false,
   platform: 'node',
@@ -90,7 +90,7 @@ window.HTMLMediaElement.prototype.pause = function () { mediaState(this).paused 
 const React = await import('react');
 const { act } = React;
 const { createRoot } = await import('react-dom/client');
-const { VideoStory, navigateDirectlyToTop, isReturningToTop } = await import(runtimeURL.href);
+const { VideoStory, navigateDirectlyToTop, navigateDirectlyToTarget, isReturningToTop, isBypassingVideo } = await import(runtimeURL.href);
 after(async () => { await unlink(runtimeURL); dom.window.close(); delete globalThis.__videoHarness; });
 
 async function fixture(options, run) {
@@ -187,6 +187,19 @@ test('top navigation from below never plays the video and clears state even if i
   assert.equal(isReturningToTop(),false);
   await f.wheel(6000);
   assert.equal(f.h.locked,true);
+}));
+
+test('explicit contact navigation crosses the video without capture and leaves later manual visits armed', async () => fixture({ duration:76 }, async f => {
+  await act(async () => navigateDirectlyToTarget(() => { f.h.y=6000; window.dispatchEvent(new window.Event('scroll')); }));
+  assert.equal(f.h.y,6000);
+  assert.equal(f.h.locked,false);
+  assert.equal(f.video.paused,true);
+  assert.equal(isBypassingVideo(),false);
+  await f.scroll(6000); // queued/native scroll at destination must not recapture
+  assert.equal(f.h.locked,false);
+  await act(async () => navigateDirectlyToTop(() => { f.h.y=0; window.dispatchEvent(new window.Event('scroll')); }));
+  await f.wheel(6000);
+  assert.equal(f.h.locked,true, 'manual traversal must still arm the video gate');
 }));
 
 test('restoring a position inside the scene captures a fresh visit', async () => fixture({ y:1016 }, async f => {
@@ -311,7 +324,7 @@ test('entry before metadata retains the lock and starts playback when metadata a
   assert.equal(f.h.locked, true);
   assert.equal(f.video.paused, true);
   await f.tick();
-  assert.match(f.section.querySelector('[role=status]').textContent, /Cargando/);
+  assert.equal(f.section.querySelector('[role=status]').textContent, '', 'loading overlay stays silent while metadata is pending');
   await act(async () => { f.h.ready = true; f.video.dispatchEvent(new window.Event('loadedmetadata')); });
   await f.tick(1, 0.05, false);
   assert.equal(f.video.paused, false);

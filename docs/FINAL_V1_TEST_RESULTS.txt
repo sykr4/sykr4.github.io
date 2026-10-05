@@ -1,0 +1,51 @@
+SYKR4 FINAL V1 — RESULTADOS DE QA
+Fecha: 2026-09-29
+
+1) PRUEBAS UNITARIAS / LÓGICA SIN NODE_MODULES
+Comando: npm run test:final
+Resultado final: 32/32 PASS, 0 FAIL.
+Incluye:
+- servidor/validación de contacto
+- máquina de estados y capturas del recorrido de vídeo
+- responsive/layout final
+- presupuestos de GPU y carga diferida
+- existencia y presupuesto de assets locales
+
+2) PARSEO TYPESCRIPT/TSX
+41 archivos de src/, server/ y tests/ transpilados sintácticamente con TypeScript global.
+Resultado: 0 errores.
+
+3) QA VISUAL DIRIGIDO DE LAS SECCIONES MODIFICADAS
+Chromium headless + Playwright Python usando un harness estático fiel a la geometría final.
+Viewports: 1440x900, 1024x600, 768x1024, 390x844, 320x568.
+Resultado geométrico: 0 overflow horizontal en los 5 viewports y 0 errores de consola del harness.
+Se inspeccionaron visualmente Hero, Servicios y tratamiento móvil del recorrido.
+Nota: este harness no sustituye una build Vite real; se utilizó porque el registro npm no era resoluble desde el contenedor.
+
+4) AUDITORÍA PÚBLICA COMPARATIVA
+Se inspeccionaron con navegador remoto la referencia Arena y sykr4.com en escritorio/móvil.
+La referencia confirmó la jerarquía editorial y el flujo móvil de servicios; producción confirmó el contenido actual, el astronauta y los riesgos de peso/letterboxing del vídeo.
+
+5) VÍDEO FINAL
+Codec: H.264
+Resolución: 1280x720
+FPS: 24
+Duración: 76.166667 s
+Tamaño: 18,071,640 bytes (~17.23 MiB)
+Bitrate total: ~1.90 Mbps
+Faststart: confirmado; átomo moov antes de mdat.
+Reducción aproximada respecto al fichero recibido: ~60%.
+
+6) LIMITACIÓN DEL ENTORNO
+npm no pudo resolver registry.npmjs.org (EAI_AGAIN). Por ello NO se declara ejecutado en esta sesión:
+- npm run check con resolución completa de dependencias
+- npm test completo (tests que requieren esbuild/jsdom/react)
+- npm run build
+- npm run test:browser sobre FINAL V1 compilada
+
+Comandos para reproducir esa última capa en un entorno con acceso a npm:
+npm ci
+npm run check
+npm test
+npm run build
+npm run test:browser

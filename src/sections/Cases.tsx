@@ -47,7 +47,7 @@ export function Cases() {
           highlight={["proyecto."]}
           className="mt-8 max-w-4xl font-display text-[clamp(2.1rem,4.6vw,4.4rem)] font-semibold leading-[1.02] tracking-[-0.04em]"
         />
-        <p className="mt-6 max-w-2xl leading-relaxed text-mute">Estas situaciones muestran dónde podemos ayudarte. Son ejemplos de proyectos que podemos estudiar contigo.</p>
+        <p className="mt-6 max-w-2xl leading-relaxed text-mute">¿Te resulta familiar alguna de estas situaciones? Son ejemplos de proyectos que podemos estudiar contigo.</p>
       </div>
 
       <div className="mx-auto mt-16 grid max-w-[1400px] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
@@ -183,7 +183,7 @@ function CasesPanel({ active, gl }: { active: number; gl: boolean }) {
             </div>
             <div className="mt-2 normal-case tracking-normal text-mute">{c.metricLabel}</div>
           </div>
-          <span className="hidden text-right text-mute xl:block">Alcance a definir contigo</span>
+          <span className="hidden text-right text-mute xl:block">Acordamos contigo qué incluye</span>
         </div>
       </div>
     </div>

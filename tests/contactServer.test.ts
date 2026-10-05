@@ -51,7 +51,7 @@ test("basic rate limiting stops repeated attempts", () => fixture(async ({post,s
   const limited=await post();assert.equal(limited.status,429);assert.ok(limited.headers.get("retry-after"));assert.equal(sent.length,5);
 }));
 test("the existing orientation option is accepted alongside the five service areas",()=>fixture(async({post})=>{
-  assert.equal((await post({...body,services:[...body.services,"Quiero orientación"]})).status,202);
+  assert.equal((await post({...body,services:[...body.services,"No sé qué necesito todavía"]})).status,202);
 }));
 for(const [label,provider] of [
   ["negative response",async()=>Response.json({message:"no"},{status:403})],

@@ -1,0 +1,34 @@
+SYKR4 FINAL V1 — REWIND FIX QA
+Date: 2026-10-02
+
+TARGETED UNIT / INTEGRATION TESTS
+- 32 tests passed
+- 0 failed
+- Covers: video gate/capture logic, contact server, final layout assertions, asset inventory/budget.
+
+TS/TSX SYNTACTIC PARSE
+- 43 files parsed
+- 0 syntax errors
+
+VIDEO STRUCTURE
+- H.264 High Profile
+- 1280x720
+- 24 fps
+- Duration: 76.166667 s
+- Keyframes: 305
+- Fixed keyframe interval: 0.25 s (GOP 6)
+- File size: 22,042,473 bytes (~21.0 MiB)
+
+REVERSE SEEK BENCHMARK
+120 consecutive frame-by-frame backward seeks around 60 s, OpenCV/FFmpeg backend:
+- Previous FINAL V1 asset: median 96.3 ms, p95 155.8 ms, avg 93.6 ms
+- Corrected asset: median 29.5 ms, p95 39.1 ms, avg 30.3 ms
+- 24 fps frame budget: 41.7 ms
+
+VISUAL QUALITY CHECK
+SSIM against original production source:
+- Previous optimized FINAL V1: 0.986085
+- Corrected rewind-friendly encode: 0.985320
+
+LIMITATION
+The full React/jsdom VideoStory component test and Vite/Playwright build were not rerun in this container because npm registry DNS is unavailable and dependencies are not present. The modified TS/TSX source was syntax-parsed successfully, and the targeted dependency-free suite passed.

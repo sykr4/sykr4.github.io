@@ -1,7 +1,7 @@
 {
-  "name": "react-vite-tailwind",
+  "name": "sykr4-web-final-v1",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,8 @@
     "start": "node --env-file-if-exists=.env.local --experimental-strip-types server/index.ts",
     "test:browser": "playwright test",
     "test": "node --experimental-strip-types --test tests/*.test.*",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "test:final": "node --experimental-strip-types --test tests/videoGate.test.ts tests/contactServer.test.ts tests/layoutFinal.test.mjs tests/assetsFinal.test.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -35,7 +36,7 @@
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3",
     "vite": "^7.3.6",
-    "vite-plugin-singlefile": "2.3.0"
+    "vite-plugin-singlefile": "2.3.3"
   },
   "engines": {
     "node": ">=24.15.0"

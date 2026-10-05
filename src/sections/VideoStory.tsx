@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap, jumpScrollTo, lockScroll } from "@/lib/scroll";
 import { addFrame } from "@/lib/loop";
 import { videoEntry, rearmVideo, type VideoPhase } from "@/lib/videoGate";
-import { isReturningToTop, TOP_NAVIGATION } from "@/lib/topNavigation";
+import { isBypassingVideo, TOP_NAVIGATION } from "@/lib/topNavigation";
 import { useInView } from "@/lib/hooks";
 import { useQuality } from "@/lib/quality";
 import { CHAPTERS, MEDIA } from "@/data/content";
@@ -37,7 +37,7 @@ function clamp(n: number, min: number, max: number) {
  * RECORRIDO — autoplay con captura real de scroll.
  *
  * Reglas de la escena:
- * 1. Entrar desde arriba captura la página y SIEMPRE arranca a 1×. El gesto
+ * 1. Ver detalles desde arriba captura la página y SIEMPRE arranca a 1×. El gesto
  *    que produjo la entrada se descarta por completo; solo el siguiente gesto
  *    del usuario puede acelerar el vídeo.
  * 2. Mientras el vídeo no haya terminado, el scroll de página queda bloqueado.
@@ -61,7 +61,7 @@ export function VideoStory() {
   const barRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLOListElement>(null);
   const { device } = useQuality();
-  const near = useInView(sectionRef, "150% 0px", true);
+  const near = useInView(sectionRef, "100% 0px", true);
   const [failed, setFailed] = useState(false);
   const [requestedPlayback, setRequestedPlayback] = useState(false);
   const useVideo = !failed && (requestedPlayback || (!device.reducedMotion && !device.saveData));
@@ -329,7 +329,7 @@ export function VideoStory() {
     };
 
     const onWheel = (e: WheelEvent) => {
-      if (isReturningToTop() || e.ctrlKey) return;
+      if (isBypassingVideo() || e.ctrlKey) return;
       if ((e.target as HTMLElement | null)?.closest?.("[role=dialog], [data-lenis-prevent]")) return;
       const st = s.current;
       const multiplier = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1;
@@ -362,7 +362,7 @@ export function VideoStory() {
       const st = s.current;
       const y = window.scrollY;
       const prevY = st.lastObservedY;
-      if (isReturningToTop()) { st.lastObservedY = y; return; }
+      if (isBypassingVideo()) { st.lastObservedY = y; return; }
 
       // Mientras la escena está capturada, scrollY no es una fuente de verdad:
       // la página debe permanecer físicamente clavada al punto de entrada. Esto
@@ -389,7 +389,7 @@ export function VideoStory() {
     };
 
     const onTouchMove = (e: TouchEvent) => {
-      if (isReturningToTop()) return;
+      if (isBypassingVideo()) return;
       if ((e.target as HTMLElement | null)?.closest?.("[role=dialog], [data-lenis-prevent]")) return;
       const st = s.current;
       if (!e.touches.length || e.touches.length > 1) return;
@@ -414,7 +414,7 @@ export function VideoStory() {
     };
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (isReturningToTop()) return;
+      if (isBypassingVideo()) return;
       const st = s.current;
       const target = e.target as HTMLElement | null;
       // Escribir en el formulario o activar controles nunca debe mover la escena.
@@ -518,7 +518,7 @@ export function VideoStory() {
         st.progressAt = now;
       }
       if (statusRef.current) {
-        statusRef.current.textContent = !st.ready || v.readyState < 2 ? "Cargando el recorrido…" : "";
+        // statusRef.current.textContent = !st.ready || v.readyState < 2 ? "Cargando el recorrido…" : "";
       }
       if (now - st.progressAt > 15000) { setFailed(true); return; }
       if (!st.ready) return;
@@ -600,7 +600,7 @@ export function VideoStory() {
       if (barRef.current) barRef.current.style.transform = `scaleX(${progress.toFixed(5)})`;
       if (timeRef.current) timeRef.current.textContent = `${fmt(displayTime)} / ${fmt(st.duration)}`;
       if (speedRef.current) {
-        const label = st.signedRate < -0.025 ? "REW" : st.signedRate > 0.025 ? "PLAY" : "HOLD";
+        const label = st.signedRate < -0.025 ? "RETROCESO" : st.signedRate > 0.025 ? "PLAY" : "PAUSA";
         speedRef.current.textContent = `${label} ×${Math.abs(st.signedRate).toFixed(2)}`;
       }
       if (posterRef.current) posterRef.current.style.transform = `scale(${(1 + progress * 0.08).toFixed(4)})`;
@@ -650,19 +650,27 @@ export function VideoStory() {
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <div ref={frameRef} className="absolute inset-0 z-10 overflow-hidden bg-ink-2">
           <div className="vs-media absolute inset-0 grid place-items-center bg-ink will-change-transform">
+            <img
+              aria-hidden="true"
+              src={MEDIA.poster}
+              alt=""
+              className="absolute inset-0 h-full w-full scale-110 object-cover opacity-25 blur-3xl brightness-50 saturate-150 md:hidden"
+              loading="lazy"
+              decoding="async"
+            />
             {useVideo ? (
               <video
                 ref={videoRef}
                 className="h-full w-full object-contain"
                 muted
                 playsInline
-                preload="auto"
+                preload="metadata"
                 poster={MEDIA.poster}
                 disablePictureInPicture
-                aria-label="Vídeo: viaje por las cinco áreas de SYKR4 y llegada del astronauta a su destino. Se reproduce automáticamente y responde a la velocidad y dirección del scroll."
+                aria-label="Vídeo de un viaje por las cinco áreas de SYKR4. Se reproduce automáticamente. Baja por la página para avanzar y sube para retroceder."
               />
             ) : (
-              <img ref={posterRef} src={MEDIA.poster} alt="Cohete de SYKR4 preparado para recorrer sus cinco áreas tecnológicas" className="h-full w-full object-contain" loading="lazy" />
+              <img ref={posterRef} src={MEDIA.poster} alt="Cohete de SYKR4 preparado para un viaje por sus cinco áreas de servicio" className="h-full w-full object-contain" loading="lazy" />
             )}
           </div>
           <div className="scanlines pointer-events-none absolute inset-0 opacity-35" />
@@ -676,9 +684,9 @@ export function VideoStory() {
               </div>
               <div className="text-right">
                 <div className="flex items-center justify-end gap-2">
-                  <span className="animate-blink h-2 w-2 rounded-full bg-red-500" /> Desplázate para avanzar
+                  <span className="animate-blink h-2 w-2 rounded-full bg-red-500" /> Baja para avanzar. Sube para retroceder.
                 </div>
-                <span ref={speedRef} className="mt-1 block text-cyan">PLAY ×1.00</span>
+                <span ref={speedRef} className="mt-1 block text-cyan">AVANCE ×1.00</span>
                 <span ref={timeRef} className="mt-1 block tabular-nums">00:00.00 / 01:16.17</span>
               </div>
             </div>
@@ -717,7 +725,7 @@ export function VideoStory() {
             <p className="font-display text-[clamp(1.8rem,5vw,4.6rem)] font-semibold tracking-tight [text-shadow:0_4px_30px_#000]">Cinco áreas. Un mismo equipo.</p>
           </div>
           {!useVideo && <div className="absolute inset-x-5 bottom-12 z-20 flex flex-col items-center gap-4 text-center">
-            <p className="max-w-xl rounded-xl bg-ink/80 p-4 text-bone">{failed ? "El vídeo no ha podido cargarse. Puedes volver a intentarlo o continuar al contacto." : "Descubre nuestras cinco áreas en un viaje con el explorador de SYKR4."}</p>
+            <p className="max-w-xl rounded-xl bg-ink/80 p-4 text-bone">{failed ? "No hemos podido cargar el vídeo. Puedes intentarlo de nuevo o seguir hasta el formulario." : "Descubre nuestras cinco áreas en un viaje con el explorador de SYKR4."}</p>
             <button type="button" className="rounded-full bg-volt px-6 py-3 font-semibold text-ink" onClick={() => { manualStartRef.current = true; setFailed(false); setRequestedPlayback(true); }}>{failed ? "Reintentar vídeo" : "Reproducir recorrido"}</button>
           </div>}
           {CHAPTERS.map((c, i) => (

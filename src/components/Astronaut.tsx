@@ -133,7 +133,7 @@ export function Astronaut({ cue }: { cue: AstronautCue }) {
       </div>
       <div className="astronaut-card__caption">
         <p role="status" aria-live="polite">
-          {state === "fallback" ? "Tu próxima misión empieza aquí." : reducedMotion ? "Tu explorador, en una vista sin movimiento." : "Se mueve solo. Acércate, gira y saluda."}
+          {state === "fallback" ? "Tu próxima misión empieza aquí." : reducedMotion ? "Tu explorador, sin animaciones." : "El explorador se mueve solo. Puedes girarlo y probar sus gestos."}
         </p>
         {state === "ready" && !reducedMotion && (
           <button

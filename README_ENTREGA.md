@@ -1,49 +1,57 @@
-# SYKR4 v13 — resultados reales y evaluación
+# SYKR4 — FINAL V1
 
-La web incorpora el copy final, cinco tarjetas ampliadas, CTA por servicio, perfiles reales del equipo y una jerarquía de lectura orientada a contacto. Base: SYKR4_WEB_v12. El ahorro del 40 % en AWS y los más de 200 servidores se muestran como experiencia real del equipo, confirmada por Enrique el 28 de septiembre. No se ha publicado.
+Esta entrega consolida la versión de producción de SYKR4 con la dirección visual de la versión inmersiva original. Conserva el contenido actual, el recorrido de vídeo, el astronauta 3D, los servicios, casos, métricas, equipo, contacto y la preparación para GitHub Pages.
 
-## Revisar la web
+## Qué se ha corregido
 
-La entrega incluye por separado `SYKR4_V13_Vista_previa.html`, autocontenida, para abrir con doble clic en un navegador. Contiene medios y tipografías; puede tardar unos segundos por su tamaño. Su formulario prepara una consulta descargable, no la envía.
+- Hero reconstruido para recuperar la jerarquía editorial original: titular protagonista y HUDs flotantes únicamente en escritorio grande.
+- Responsive del Hero simplificado; se eliminó la columna fija de 260 px que comprimía el contenido.
+- Servicios: narrativa horizontal fijada en escritorio con puntero desde 1024 px, sin depender de una altura mínima; en móvil/tablet pasa a una cuadrícula/flujo normal y deja de forzar una pista horizontal de ~84vw por tarjeta.
+- Endurecimiento responsive en casos, contacto, vídeo, menú y viewports de poca altura.
+- Vídeo del recorrido mantiene 1280×720, H.264 y 24 fps, pero se ha recomprimido de ~43 MB a ~21 MB, con `faststart` y `preload="metadata"`.
+- En móvil el vídeo conserva `object-contain` para no recortar el contenido, con un fondo ambiental desenfocado para evitar grandes barras negras visualmente vacías.
+- El astronauta 3D se mantiene con su carga diferida y preview; además, el presupuesto general WebGL se ha reducido para evitar empezar con una carga excesiva.
+- Partículas: 24k/10k/4k según perfil y DPR máximo 1.5/1.25/1; el LOD adaptativo existente puede bajar todavía más si caen los FPS.
+- La composición de Equipo se compacta ligeramente en móvil sin eliminar el contenido de producción.
+- Navegación directa a Contacto: todos los CTA que apuntan a `#contacto` atraviesan el recorrido sin activar la captura del vídeo, igual que «Volver arriba» lo omite en sentido contrario. El scroll manual sigue activando el recorrido normalmente.
+- Se conserva comentada la línea del overlay `Cargando el recorrido…`, tal como se pidió en la revisión anterior.
 
-Para revisar el proyecto completo en tu ordenador (Node.js 22.18 o posterior):
+## Validación incluida
+
+Pruebas puras que no requieren instalar dependencias (33 comprobaciones en esta revisión):
+
+```bash
+npm run test:final
+```
+
+También se conserva la suite completa del proyecto:
 
 ```bash
 npm ci
-npm run dev -- --host 127.0.0.1 --port 5173 --open
-```
-
-Abre http://127.0.0.1:5173/. En Linux puedes ejecutar `bash INICIAR_LOCAL.sh`, que instala dependencias si faltan y abre esa dirección. Si el puerto ya está ocupado, usa la URL que indique Vite.
-
-## Contenido y validación
-
-- `docs/CAMBIOS_V13.md`: corrección vigente de los resultados reales y notas de validación.
-- `docs/EVALUACION_WEB_V13.md`: evaluación de la web, nota y mejoras prioritarias.
-- `docs/CAMBIOS_V12.md`: histórico de widgets y presentación del equipo; la confirmación de cifras en v13 prevalece.
-- `docs/COPY_FINAL_V11.md`: auditoría, propuesta, textos anteriores/nuevos y SEO de la base v11; los cambios v13 prevalecen.
-- `docs/MAPA_SERVICIOS_V11.md`: correspondencia con el PDF, subservicios y límites.
-- `src/data/content.ts`: contenido central de tarjetas, ejemplos, método y vídeo.
-- Cinco servicios, 16 aplicaciones de IA, vídeo y astronauta originales.
-- Build y TypeScript v13 correctos. Las 58 pruebas tienen resultado correcto registrado en v12. QA visual v13 pendiente: el navegador remoto bloqueó localhost y file://. La carpeta `docs/qa` contiene evidencia histórica v10, rotulada como tal.
-
-```bash
 npm run check
 npm test
 npm run build
-npm run preview -- --host 127.0.0.1
+npm run test:browser
 ```
 
-## Formulario de producción
+La entrega fue auditada contra las dos webs públicas. La referencia antigua confirma que el Hero editorial y el flujo de servicios sin carrusel horizontal en móvil eran parte de la experiencia que funcionaba mejor. La producción confirmó el contenido y las capacidades nuevas, y puso de manifiesto el coste del vídeo/3D y el letterboxing móvil.
 
-La fuente utiliza `/api/contact` y conserva validación, control de duplicados y manejo de errores. El envío real requiere configurar `.env.local` a partir de `.env.example`: `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM` y `PUBLIC_ORIGIN`. No se han facilitado esos datos ni probado correos reales. Nunca incluyas secretos en variables `VITE_*`.
+### Limitación del entorno de entrega
 
-Sin configuración muestra indisponibilidad y no presenta la consulta como enviada. La vista HTML de revisión usa el modo descarga de forma expresa. Los textos legales definitivos todavía no se han facilitado.
+El entorno donde se preparó este ZIP no pudo resolver `registry.npmjs.org` (`EAI_AGAIN`), por lo que no fue posible reinstalar Vite/React/Playwright y ejecutar aquí la suite que depende de `node_modules`. Para no ocultarlo, se añadieron pruebas estáticas específicas y se ejecutaron las pruebas de lógica que funcionan sin dependencias. En un entorno normal con acceso al registro, los comandos de arriba son la comprobación final reproducible.
+
+## Desarrollo local
+
+Requiere Node según `package.json`.
 
 ```bash
-npm run build
-npm start
+npm ci
+npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
-`npm start` sirve `dist/` y la API desde el servidor Node incluido. Un alojamiento solo estático no ejecuta ese backend. Más información técnica en `CONTACTO_ASTRONAUTA.md`; instrucciones históricas en `docs/README_V10_HISTORICO.md`.
+## Producción y contacto
 
-El recorrido sigue interceptando las entradas normales y continúa hacia el destino de los CTA al finalizar. «Volver arriba» conserva su excepción y no reproduce de nuevo el vídeo. La revisión de textos no altera ese contrato.
+El frontend usa `/api/contact`. Para envío real hay que configurar las variables descritas en `.env.example`. Un hosting puramente estático no ejecutará el backend Node incluido; la parte visual sí sigue preparada para la raíz de `sykr4.com`/GitHub Pages según `vite.config.ts`.
+
+
+La documentación de `docs/` que menciona v10-v13 se conserva únicamente como histórico. Para esta entrega prevalecen `README_FINAL_V1.md`, `AUDITORIA_FINAL_V1.md` y `docs/FINAL_V1_TEST_RESULTS.txt`.

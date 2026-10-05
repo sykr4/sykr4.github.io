@@ -19,10 +19,10 @@ export function Preloader({ onDone }: { onDone: () => void }) {
 
   const logs = [
     "IA y automatización",
-    "AWS, cloud y costes",
+    "AWS y control de costes",
     "Seguridad y Microsoft 365",
     "Desarrollo e integraciones",
-    "Web y ecommerce",
+    "Web y tiendas online",
   ];
 
   useEffect(() => {

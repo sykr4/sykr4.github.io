@@ -62,7 +62,7 @@ export function Nav() {
             <span className="font-display text-[15px] font-semibold tracking-[-0.02em]">SYKR4</span>
           </button>
 
-          <nav aria-label="Principal" className="hidden items-center gap-1 lg:flex">
+          <nav aria-label="Navegación principal" className="hidden items-center gap-1 lg:flex">
             {LINKS.map((l) => (
               <button key={l.id} onClick={() => go(l.id)} className="group relative rounded-full px-4 py-2 text-sm text-bone/70 transition-colors hover:text-bone">
                 <RollText text={l.label} />
@@ -221,8 +221,8 @@ function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) 
               NAV.map((item, i) => item.id === "nosotros" ? (
                 <div key={item.id} className={cn("absolute inset-0 flex flex-col justify-center bg-[radial-gradient(ellipse_at_20%_70%,rgba(92,242,255,0.13),transparent_65%)] p-10 transition-all duration-700 ease-out-expo", shown === i ? "scale-100 opacity-100" : "scale-110 opacity-0")}>
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan">Equipo SYKR4</span>
-                  <span className="mt-5 font-display text-4xl font-medium leading-tight tracking-[-0.03em]">Experiencia.<br />Visión conjunta.</span>
-                  <span className="mt-5 max-w-xs text-sm leading-relaxed text-mute">Enrique y Javier al frente de arquitectura, seguridad y desarrollo.</span>
+                  <span className="mt-5 font-display text-4xl font-medium leading-tight tracking-[-0.03em]">Experiencia.<br />Un equipo conectado.</span>
+                  <span className="mt-5 max-w-xs text-sm leading-relaxed text-mute">Enrique y Javier al frente de arquitectura tecnológica, seguridad y desarrollo.</span>
                 </div>
               ) : (
                 <img
@@ -249,7 +249,7 @@ function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) 
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-mute">Efectos visuales</p>
                 <p className="mt-1 text-sm text-bone/80">{eco ? "Menos efectos para una navegación más ligera." : "Animaciones y efectos visuales completos."}</p>
               </div>
-              <div role="radiogroup" aria-label="Calidad visual" className="flex shrink-0 rounded-full border border-white/15 p-1">
+              <div role="radiogroup" aria-label="Nivel de efectos visuales" className="flex shrink-0 rounded-full border border-white/15 p-1">
                 <button
                   role="radio"
                   aria-checked={!eco}
@@ -274,7 +274,7 @@ function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) 
 
       <div className="m-fade relative mx-auto mt-6 flex w-full max-w-[1400px] flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5 font-mono text-[10px] uppercase tracking-[0.2em] text-mute">
         <span>© 2026 SYKR4 · Soluciones tecnológicas</span>
-        <span>Automatización · Cloud · Seguridad · Desarrollo · Web</span>
+        <span>Automatización · Nube · Seguridad · Desarrollo · Web</span>
       </div>
     </div>
   );

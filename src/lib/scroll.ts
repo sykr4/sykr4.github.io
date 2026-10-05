@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
-import { isReturningToTop, navigateDirectlyToTop } from "./topNavigation";
+import { isBypassingVideo, navigateDirectlyToTarget, navigateDirectlyToTop } from "./topNavigation";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -67,6 +67,18 @@ export function initSmoothScroll(enabled: boolean) {
 }
 
 export function scrollToTarget(target: string | number | HTMLElement, offset = 0) {
+  const element = typeof target === "string" ? document.querySelector<HTMLElement>(target) : typeof target === "number" ? null : target;
+  const goesToContact = (typeof target === "string" && target === "#contacto") || element?.id === "contacto";
+
+  // Los CTA de contacto son navegación explícita, no exploración manual. Igual que
+  // «Volver arriba», atraviesan la escena de vídeo sin activar su puerta.
+  if (goesToContact && element) {
+    pendingTarget = null;
+    const top = element.getBoundingClientRect().top + window.scrollY + offset;
+    navigateDirectlyToTarget(() => jumpScrollTo(top));
+    return;
+  }
+
   pendingTarget = { target, offset };
   continueNavigation();
 }
@@ -79,7 +91,7 @@ export function jumpScrollTo(y: number) {
   ScrollTrigger.update();
 }
 
-/** Only this explicit action bypasses the video; manual navigation still captures it. */
+/** Explicit return-to-top bypasses the video; manual navigation still captures it. */
 export function returnToTop() {
   pendingTarget = null;
   navigateDirectlyToTop(() => jumpScrollTo(0));
@@ -95,7 +107,7 @@ export function lockScroll(value: boolean, owner = "ui") {
     else lenis.start();
   }
   document.documentElement.style.overflow = locked ? "hidden" : "";
-  if (!locked && owner === "video-story" && !isReturningToTop()) continueNavigation();
+  if (!locked && owner === "video-story" && !isBypassingVideo()) continueNavigation();
 }
 
 export { gsap, ScrollTrigger };

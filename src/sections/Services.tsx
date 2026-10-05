@@ -21,8 +21,8 @@ export function Services() {
   const countRef = useRef<HTMLSpanElement>(null);
   const openerRef = useRef<HTMLButtonElement | null>(null);
   // The pinned horizontal section needs room for the full service copy.
-  // Short laptop/landscape viewports use the normal-flow horizontal cards.
-  const desktop = useMediaQuery("(min-width: 1024px) and (min-height: 780px) and (hover: hover)");
+  // Any pointer desktop from 1024 px keeps the pinned narrative; touch/tablet layouts use normal flow.
+  const desktop = useMediaQuery("(min-width: 1024px) and (hover: hover)");
   const [height, setHeight] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [origin, setOrigin] = useState<OriginRect | null>(null);
@@ -91,7 +91,7 @@ export function Services() {
         />
       </div>
       <div>
-        <p className="max-w-sm text-mute">Automatizar una tarea, revisar un gasto, proteger datos o crear una web. Explora cada área para ver qué podemos resolver y qué incluye el trabajo.</p>
+        <p className="max-w-sm text-mute">Automatizar tareas, conectar herramientas, controlar gastos, proteger datos o crear una web. Descubre en cada área cómo podemos ayudarte y qué podemos hacer.</p>
         <div className={desktop ? "mt-8 flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.2em] text-mute" : "hidden"}>
           <span ref={countRef} className="tabular-nums text-bone">01</span>
           <span className="relative h-px w-40 overflow-hidden bg-white/15">
@@ -113,22 +113,22 @@ export function Services() {
             ref={trackRef}
             className={
               desktop
-                ? "flex w-max items-stretch gap-6 pl-[6vw] pr-[8vw] pt-16 will-change-transform"
-                : "mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-6 [scrollbar-width:none] md:px-10"
+                ? "flex w-max items-stretch gap-6 pl-[6vw] pr-[8vw] pt-12 will-change-transform"
+                : "mt-12 grid gap-4 px-5 pb-6 sm:grid-cols-2 md:px-10"
             }
           >
             {desktop && intro}
             {SERVICES.map((s, i) => (
               <TiltCard
                 key={s.title}
-                className="svc-card group min-h-[560px] w-[min(400px,84vw)] shrink-0 snap-center overflow-hidden rounded-[28px] border border-white/10 bg-ink-2/85 transition-colors focus-within:border-cyan/60"
+                className={desktop ? "svc-card group h-[min(560px,70vh)] min-h-[440px] w-[min(400px,34vw)] shrink-0 overflow-hidden rounded-[28px] border border-white/10 bg-ink-2/85 transition-colors focus-within:border-cyan/60" : "svc-card group min-h-[430px] w-full overflow-hidden rounded-[26px] border border-white/10 bg-ink-2/85 transition-colors focus-within:border-cyan/60"}
               >
                 <button
                   type="button"
                   onClick={(e) => openDetail(i, e.currentTarget)}
                   aria-haspopup="dialog"
-                  data-cursor="Entrar"
-                  className="relative flex h-full min-h-[560px] w-full flex-col p-7 text-left"
+                  data-cursor="Ver detalles"
+                  className={`relative flex h-full w-full flex-col text-left ${desktop ? "min-h-[440px] p-7" : "min-h-[430px] p-6"}`}
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <span className="shrink-0 font-mono text-xs text-mute">{String(i + 1).padStart(2, "0")} / {String(SERVICES.length).padStart(2, "0")}</span>
@@ -137,7 +137,7 @@ export function Services() {
                   <div className="mt-8 text-bone/90 [transform:translateZ(50px)]"><ServiceIcon name={s.icon} className="h-16 w-16" /></div>
                   <h3 className="mt-auto pt-8 font-display text-[1.6rem] font-medium leading-[1.1] tracking-[-0.03em] [transform:translateZ(30px)]">{s.title}</h3>
                   <p className="mt-4 text-base font-medium leading-snug text-cyan">{s.microclaim}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-mute">{s.text}</p>
+                  <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-mute">{s.text}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {s.tags.map((t) => <span key={t} className="rounded-full bg-white/[0.05] px-3 py-1 text-[11px] text-bone/75">{t}</span>)}
                   </div>
@@ -147,10 +147,10 @@ export function Services() {
                 </button>
               </TiltCard>
             ))}
-            <div className="flex w-[min(400px,84vw)] shrink-0 snap-center flex-col justify-center rounded-[28px] border border-dashed border-white/15 p-8">
+            <div className={desktop ? "flex w-[min(400px,34vw)] shrink-0 flex-col justify-center rounded-[28px] border border-dashed border-white/15 p-8" : "flex min-h-[300px] w-full flex-col justify-center rounded-[26px] border border-dashed border-white/15 p-7 sm:col-span-2"}>
               <p className="font-display text-3xl font-medium leading-tight tracking-[-0.03em]">¿No sabes por dónde empezar?</p>
-              <p className="mt-4 text-mute">Explícanos cómo trabajáis y dónde aparece el problema. Te ayudamos a concretar qué conviene abordar primero.</p>
-              <PrimaryButton label="Ayúdame a definirlo" onClick={() => scrollToTarget("#contacto")} className="mt-8" />
+              <p className="mt-4 text-mute">Cuéntanos cómo trabaja tu equipo y qué quieres mejorar. Te ayudamos a decidir por dónde empezar.</p>
+              <PrimaryButton label="Ayúdame a empezar" onClick={() => scrollToTarget("#contacto")} className="mt-8" />
             </div>
           </div>
         </div>
@@ -260,10 +260,10 @@ function ServiceDetail({ service, index, origin, onClosed }: { service: Service;
               <span className="hidden sm:inline">Cerrar</span><span className="grid h-9 w-9 place-items-center rounded-full bg-bone text-ink transition-transform duration-500 ease-out-expo group-hover:rotate-90">✕</span>
             </button>
           </div>
-          <div className="grid flex-1 content-center gap-12 py-[8vh] lg:grid-cols-[minmax(0,.95fr)_minmax(320px,1.05fr)] lg:items-start lg:gap-14">
+          <div className="grid flex-1 content-center gap-12 py-[8vh] xl:grid-cols-[minmax(0,.95fr)_minmax(320px,1.05fr)] xl:items-start xl:gap-14">
             <div>
               <div className="sd-reveal inline-flex items-center gap-3 rounded-full border border-cyan/25 bg-cyan/[0.06] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan"><span className="h-1.5 w-1.5 rounded-full bg-cyan" />{service.metric}</div>
-              <h2 id="service-detail-title" className="sd-reveal mt-7 max-w-[900px] break-words font-display text-[clamp(1.7rem,4.3vw,4.7rem)] font-semibold leading-[1.05] tracking-[-0.055em]">{service.title}</h2>
+              <h2 id="service-detail-title" className="sd-reveal mt-7 max-w-[900px] text-balance [overflow-wrap:normal] [word-break:normal] [hyphens:none] font-display text-[clamp(1.7rem,4.3vw,4.7rem)] font-semibold leading-[1.05] tracking-[-0.055em]">{service.title}</h2>
               <p className="sd-reveal mt-6 max-w-2xl font-display text-xl leading-snug text-cyan md:text-2xl">{service.microclaim}</p>
               <p className="sd-reveal mt-5 max-w-2xl text-base leading-relaxed text-bone/72 md:text-lg">{service.description}</p>
               <div className="sd-reveal mt-7 border-l-2 border-cyan/60 pl-5"><h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan">Qué te aporta</h3><p className="mt-3 text-base leading-relaxed text-bone/80">{service.outcome}</p></div>
@@ -276,7 +276,7 @@ function ServiceDetail({ service, index, origin, onClosed }: { service: Service;
               <button type="button" onClick={goContact} className="group mt-6 flex w-full items-center justify-between rounded-full bg-bone px-5 py-4 font-semibold text-ink transition-transform duration-300 hover:scale-[1.015]"><span className="text-left">{service.cta}</span><span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">↗</span></button>
             </aside>
           </div>
-          <div className="sd-reveal flex items-center justify-between border-t border-white/10 pt-5 font-mono text-[10px] uppercase tracking-[0.18em] text-mute"><span>SYKR4 · Un proceso claro. Una entrega definida.</span><span className="hidden sm:inline">Esc para volver</span></div>
+          <div className="sd-reveal flex items-center justify-between border-t border-white/10 pt-5 font-mono text-[10px] uppercase tracking-[0.18em] text-mute"><span>SYKR4 · Un proceso claro. Una entrega definida.</span><span className="hidden sm:inline">Pulsa Esc para cerrar</span></div>
         </div>
       </div>
     </div>

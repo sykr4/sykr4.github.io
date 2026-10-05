@@ -264,7 +264,7 @@ export function Contact() {
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           <div className="space-y-6">
             <p className="max-w-lg text-[16px] leading-relaxed text-mute">
-              Explícanos qué tarea te quita tiempo, qué sistema te da problemas o qué quieres poner en marcha. Revisaremos el punto de partida contigo y definiremos qué solución tiene sentido.
+              Cuéntanos qué tarea te quita tiempo, qué herramienta te da problemas o qué quieres poner en marcha. Cuando nos compartas tu consulta, estudiaremos contigo por dónde empezar.
             </p>
             <Astronaut cue={astronautCue} />
             <ul className="space-y-3 font-mono text-[11px] uppercase tracking-[0.2em] text-mute">
@@ -272,7 +272,7 @@ export function Contact() {
                 <span className="h-1.5 w-1.5 rounded-full bg-volt" /> Contacto directo con el equipo
               </li>
               <li className="flex items-center gap-3">
-                <span className="h-1.5 w-1.5 rounded-full bg-volt" /> Alcance, precio y plazo definidos
+                <span className="h-1.5 w-1.5 rounded-full bg-volt" /> Sabes qué incluye, cuánto cuesta y cuándo estará listo
               </li>
               <li className="flex items-center gap-3">
                 <span className="h-1.5 w-1.5 rounded-full bg-volt" /> Decides con una propuesta clara
@@ -281,8 +281,8 @@ export function Contact() {
           </div>
 
           <form ref={formRef} onSubmit={submit} onChange={() => { if (status !== "sending") setStatus("idle"); }} aria-busy={status === "sending"} noValidate className="relative rounded-[32px] border border-white/10 bg-ink-2/85 p-6 md:p-10">
-            <h3 className="font-display text-lg font-medium tracking-tight">Empecemos por el problema</h3>
-            <p className="mb-7 mt-2 text-sm leading-relaxed text-mute">No necesitas un documento técnico. Cuéntanos cómo trabajáis y qué os gustaría mejorar.</p>
+            <h3 className="font-display text-lg font-medium tracking-tight">Empecemos por lo que necesitas</h3>
+            <p className="mb-7 mt-2 text-sm leading-relaxed text-mute">No necesitas saber de tecnología. Cuéntanos cómo trabaja tu equipo y qué quieres mejorar.</p>
             {available === false && <p className="mb-6 text-sm text-rose-300" role="status">El formulario aún no está disponible para enviar consultas.</p>}
             <fieldset disabled={status === "sending"} className="min-w-0">
             <div hidden aria-hidden="true"><label htmlFor="website">Deja este campo vacío</label><input id="website" name="website" tabIndex={-1} autoComplete="off" /></div>
@@ -319,11 +319,11 @@ export function Contact() {
             </fieldset>
 
             <Field name="mensaje" label="Cuéntanos tu proyecto *" textarea error={errors.mensaje} className="mt-9" />
-            <p className="mt-3 text-xs leading-relaxed text-mute">Qué quieres resolver, con qué herramientas trabajáis y qué os gustaría conseguir. Los campos con * son obligatorios.</p>
+            <p className="mt-3 text-xs leading-relaxed text-mute">Explica qué quieres resolver, qué herramientas usa tu equipo y qué resultado buscas. Los campos con * son obligatorios.</p>
 
             <div className="mt-10 flex flex-wrap items-center justify-between gap-6">
               <p className="max-w-xs text-xs leading-relaxed text-mute">
-                {contactEndpoint ? "Utilizaremos tus datos únicamente para responder a tu consulta." : contactEmail ? "Abriremos tu aplicación de correo con la consulta preparada para que puedas revisarla y enviarla." : "Prepararemos tu consulta con los datos que indiques. Podrás revisarla antes de compartirla con SYKR4."}
+                {contactEndpoint ? "Utilizaremos tus datos únicamente para responder a tu consulta." : contactEmail ? "Abriremos tu aplicación de correo con la consulta preparada para que puedas revisarla y enviarla." : "Descarga tu consulta en un archivo de texto para revisarla y compartirla con SYKR4. Este formulario no la envía."}
               </p>
               <div className="relative">
                 <Magnetic>
@@ -333,7 +333,7 @@ export function Contact() {
                     className="contact-submit group relative inline-flex min-h-16 max-w-full items-center gap-3 overflow-hidden rounded-full bg-volt pl-6 pr-2 font-semibold text-ink transition-shadow duration-500 hover:shadow-[0_0_50px_-8px_rgba(214,255,74,0.7)] disabled:opacity-60"
                   >
                     <span aria-hidden className="absolute inset-0 translate-y-[101%] rounded-full bg-bone transition-transform duration-500 ease-out-expo group-hover:translate-y-0" />
-                    <span className="relative"><RollText text={status === "sending" ? "Enviando…" : status === "sent" ? "Consulta aceptada" : contactEndpoint ? "Enviar consulta" : contactEmail ? "Abrir correo" : status === "prepared" ? "Preparar otra copia" : "Preparar consulta"} /></span>
+                    <span className="relative"><RollText text={status === "sending" ? "Enviando…" : status === "sent" ? "Consulta aceptada" : contactEndpoint ? "Enviar consulta" : contactEmail ? "Abrir correo" : status === "prepared" ? "Descargar otra copia" : "Preparar consulta"} /></span>
                     <span className="relative grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ink text-volt">
                       <ArrowUpRight className="h-5 w-5 transition-transform duration-500 group-hover:rotate-45" />
                     </span>
@@ -344,7 +344,7 @@ export function Contact() {
 
             </fieldset>
             <p role="status" aria-live="polite" className={cn("mt-6 text-sm transition-opacity duration-500", status === "error" ? "text-rose-300" : "text-volt", status !== "idle" ? "opacity-100" : "opacity-0")}>
-              {status === "prepared" ? "Tu consulta está preparada en un archivo de texto. Todavía no se ha enviado a SYKR4." : status === "email" ? "Continúa en tu aplicación de correo para revisar y enviar la consulta." : status === "sending" ? "Enviando tu consulta…" : status === "sent" ? "Tu consulta se ha aceptado para envío. Gracias por contarnos tu proyecto." : status === "error" ? sendError : ""}
+              {status === "prepared" ? "Tu consulta está lista en el archivo Consulta-SYKR4.txt. Revisa la descarga y compártela con SYKR4 cuando quieras. No se ha enviado automáticamente." : status === "email" ? "Continúa en tu aplicación de correo para revisar y enviar la consulta." : status === "sending" ? "Enviando tu consulta…" : status === "sent" ? "Tu consulta se ha aceptado para envío. Gracias por contarnos tu proyecto." : status === "error" ? sendError : ""}
             </p>
           </form>
         </div>

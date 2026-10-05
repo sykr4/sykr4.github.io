@@ -14,8 +14,8 @@ export interface DeviceProfile {
   gpu: string;
 }
 
-export const PARTICLES_BY_TIER: Record<Tier, number> = { high: 32000, mid: 15000, low: 6000 };
-export const DPR_BY_TIER: Record<Tier, number> = { high: 1.75, mid: 1.5, low: 1 };
+export const PARTICLES_BY_TIER: Record<Tier, number> = { high: 24000, mid: 10000, low: 4000 };
+export const DPR_BY_TIER: Record<Tier, number> = { high: 1.5, mid: 1.25, low: 1 };
 
 type NavigatorExtra = Navigator & {
   deviceMemory?: number;

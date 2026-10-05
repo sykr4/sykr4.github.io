@@ -7,7 +7,7 @@ import * as esbuild from 'esbuild';
 import * as contactRules from '../shared/contact.ts';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const source = fs.readFileSync(root+'/src/sections/Contact.tsx','utf8');
-const services = ['IA y automatización','AWS, cloud y costes','Seguridad y Microsoft 365','Desarrollo e integraciones','Web y ecommerce'];
+const services = ['IA y automatización','AWS y control de costes','Seguridad y Microsoft 365','Desarrollo e integraciones','Web y tiendas online'];
 function setup({fields, env={}, response} = {}) {
   env = { VITE_CONTACT_MODE: 'download', ...env };
   const outputs = {states:[], updates:[], downloads:[], fetches:[], urls:[], timers:[], cleanups:[], focused:[]};

@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <p className="max-w-xs font-display text-2xl font-medium leading-tight tracking-[-0.03em]">Del proceso que te frena a una solución que puedas usar.</p>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-mute">Automatización, cloud, seguridad, desarrollo y web. Estudiamos qué necesitas, aprovechamos lo que ya tienes y definimos el siguiente paso contigo.</p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-mute">Automatización, servicios en la nube, seguridad, desarrollo y web. Entendemos qué necesitas, aprovechamos las herramientas que ya tienes y acordamos contigo el siguiente paso.</p>
           </div>
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-mute">Servicios</p>
@@ -46,7 +46,7 @@ export function Footer() {
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-mute">Antes de empezar</p>
             <ul className="mt-4 space-y-2 text-sm text-bone/80">
-              <li>Alcance definido</li>
+              <li>Sabes qué incluye</li>
               <li>Precio y plazo acordados</li>
               <li>Entrega y revisión contigo</li>
             </ul>
@@ -65,7 +65,7 @@ export function Footer() {
         <div className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-6 font-mono text-[10px] uppercase tracking-[0.2em] text-mute">
           <span>© 2026 SYKR4 · Soluciones tecnológicas</span>
           <span className="tabular-nums">Hora local · España {time}</span>
-          <span className="hidden md:inline">Equipo multidisciplinar · Liderazgo técnico</span>
+          <span className="hidden md:inline">Varias especialidades · Trato directo con el equipo</span>
           <Magnetic>
             <button onClick={returnToTop} className="group flex items-center gap-2 rounded-full border border-white/15 py-2 pl-4 pr-2 text-bone transition-colors hover:border-cyan/60">
               Volver arriba
