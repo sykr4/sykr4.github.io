@@ -145,7 +145,6 @@ function CasesPanel({ active, gl }: { active: number; gl: boolean }) {
   return (
     <div
       ref={wrapRef}
-      data-cursor="Explorar"
       onPointerMove={(e) => fx.current?.setPointer(e.clientX, e.clientY)}
       onPointerEnter={() => fx.current?.setHover(1)}
       onPointerLeave={() => fx.current?.setHover(0)}

@@ -4,7 +4,7 @@ import { useLocalTime } from "@/lib/hooks";
 import { useQuality } from "@/lib/quality";
 import { MEDIA, NAV } from "@/data/content";
 import { cn } from "@/utils/cn";
-import { LogoMark } from "./icons";
+import { LogoWordmark } from "./icons";
 import { RollText } from "./ui";
 
 const LINKS = [
@@ -57,9 +57,10 @@ export function Nav() {
           ref={pillRef}
           className="pointer-events-auto relative mx-auto flex max-w-[1400px] items-center justify-between gap-3 rounded-full border border-white/10 bg-ink/60 py-2 pl-3 pr-2 backdrop-blur-xl transition-transform duration-700 ease-out-expo md:pl-4"
         >
-          <button onClick={() => go("inicio")} className="group flex items-center gap-2.5" aria-label="SYKR4 — volver al inicio">
-            <LogoMark className="h-8 w-8 text-bone transition-transform duration-700 ease-out-expo group-hover:rotate-180" />
-            <span className="font-display text-[15px] font-semibold tracking-[-0.02em]">SYKR4</span>
+          <button onClick={() => go("inicio")} className="group relative flex items-center gap-2.5" aria-label="SYKR4 — volver al inicio">
+            <span aria-hidden className="h-8 w-8 shrink-0" />
+            <span aria-hidden className="invisible font-display text-[15px] font-semibold tracking-[-0.02em]">SYKR4</span>
+            <LogoWordmark className="absolute inset-0 h-full w-full text-bone" />
           </button>
 
           <nav aria-label="Navegación principal" className="hidden items-center gap-1 lg:flex">
@@ -184,9 +185,10 @@ function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) 
         className="pointer-events-none absolute inset-0 [background:radial-gradient(55%_45%_at_85%_15%,rgba(139,92,255,0.2),transparent_70%),radial-gradient(40%_40%_at_10%_90%,rgba(92,242,255,0.12),transparent_70%)]"
       />
       <div className="relative mx-auto flex w-full max-w-[1400px] items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <LogoMark className="h-8 w-8 text-bone" />
-          <span className="font-display text-[15px] font-semibold">SYKR4</span>
+        <div role="img" aria-label="SYKR4" className="relative flex items-center gap-2.5">
+          <span aria-hidden className="h-8 w-8 shrink-0" />
+          <span aria-hidden className="invisible font-display text-[15px] font-semibold">SYKR4</span>
+          <LogoWordmark className="absolute inset-0 h-full w-full text-bone" />
         </div>
         <button onClick={close} aria-label="Cerrar menú" className="group flex items-center gap-3 rounded-full border border-white/15 py-1.5 pl-5 pr-1.5 text-sm transition-colors hover:border-cyan/60">
           <RollText text="Cerrar" />

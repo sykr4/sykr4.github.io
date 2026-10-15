@@ -4,6 +4,7 @@ import { gsap, scrollToTarget } from "@/lib/scroll";
 import { addFrame, pointer } from "@/lib/loop";
 import { useQuality } from "@/lib/quality";
 import { useMediaQuery } from "@/lib/hooks";
+import { layoutHeroPanels } from "@/lib/heroPanels";
 import { GhostButton, PrimaryButton } from "@/components/ui";
 
 const LINES = ["Automatiza", "procesos.", "Conecta sistemas."];
@@ -17,6 +18,7 @@ const LINES = ["Automatiza", "procesos.", "Conecta sistemas."];
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const actionsRef = useRef<HTMLDivElement>(null);
   const { ready, device } = useQuality();
   const showDecor = useMediaQuery("(min-width: 1280px)");
 
@@ -77,6 +79,53 @@ export function Hero() {
     });
   }, [device.touch, device.reducedMotion, showDecor]);
 
+  useEffect(() => {
+    const hero = ref.current;
+    const actions = actionsRef.current;
+    if (!showDecor || !hero || !actions || !cardsRef.current) return;
+    const cards = Array.from(cardsRef.current.querySelectorAll<HTMLElement>(".hero-card"));
+    const panels = cards.map(card => card.querySelector<HTMLElement>(".hero-card-inner")!);
+    const buttons = Array.from(actions.querySelectorAll("button"));
+    const shifts = cards.map(() => ({ x: 0, y: 0 }));
+    const update = () => {
+      const rect = hero.getBoundingClientRect();
+      if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
+      const scaleX = rect.width / hero.offsetWidth || 1;
+      const scaleY = rect.height / hero.offsetHeight || 1;
+      const actionTop = Math.min(...buttons.map(button => button.getBoundingClientRect().top));
+      const natural = panels.map((panel, i) => {
+        const box = panel.getBoundingClientRect();
+        const x = shifts[i].x * scaleX;
+        const y = shifts[i].y * scaleY;
+        return { left: box.left - x, right: box.right - x, top: box.top - y, bottom: box.bottom - y };
+      });
+      const placements = layoutHeroPanels(natural, {
+        left: Math.max(16, rect.left + 16),
+        right: Math.min(document.documentElement.clientWidth - 16, rect.right - 16),
+        top: rect.top + 16,
+        bottom: Math.min(rect.bottom - 16, actionTop - 20),
+      });
+      placements.forEach((placement, i) => {
+        const x = placement.x / scaleX;
+        const y = placement.y / scaleY;
+        cards[i].style.translate = `${x}px ${y}px`;
+        cards[i].style.visibility = placement.visible ? "" : "hidden";
+        shifts[i] = { x, y };
+      });
+    };
+    update();
+    // Run after pointer parallax, using the existing animation loop. This also
+    // follows GSAP scroll motion, magnetic buttons, font loading and resizing.
+    const remove = addFrame(update, 10);
+    return () => {
+      remove();
+      cards.forEach(card => {
+        card.style.removeProperty("translate");
+        card.style.removeProperty("visibility");
+      });
+    };
+  }, [showDecor]);
+
   return (
     <section id="inicio" tabIndex={-1} ref={ref} data-gl-state="0" className="relative flex min-h-[100svh] flex-col px-5 pt-28 md:px-10 md:pt-32">
       <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-end pb-9 lg:justify-center lg:pb-3">
@@ -99,7 +148,7 @@ export function Hero() {
           <p className="hero-intro max-w-[520px] text-[15px] leading-relaxed text-mute md:text-[17px]">
             Creamos webs y aplicaciones, conectamos las herramientas que ya usas y automatizamos tareas repetitivas. También revisamos tus servicios en la nube de Amazon (AWS), el gasto en inteligencia artificial y la seguridad de Microsoft 365 para que sepas qué mejorar y por dónde empezar.
           </p>
-          <div className="hero-intro flex flex-wrap items-center gap-3">
+          <div ref={actionsRef} className="hero-actions hero-intro flex flex-wrap items-center gap-3">
             <PrimaryButton label="Hablemos de tu proyecto" onClick={() => scrollToTarget("#contacto")} />
             <GhostButton label="Ver servicios" onClick={() => scrollToTarget("#servicios")} />
           </div>

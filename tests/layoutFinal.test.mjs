@@ -12,12 +12,12 @@ test('hero keeps the original editorial composition instead of the production si
   assert.doesNotMatch(css, /\.hero-content\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s*260px/s);
 });
 
-test('services use pinned storytelling on pointer desktops and a real responsive grid elsewhere', async () => {
+test('services preserve the full description and the mobile grid', async () => {
   const services = await read('src/sections/Services.tsx');
-  assert.match(services, /\(min-width: 1024px\) and \(hover: hover\)/);
-  assert.doesNotMatch(services, /min-height:\s*780px/);
   assert.match(services, /mt-12 grid gap-4 px-5 pb-6 sm:grid-cols-2/);
-  assert.match(services, /line-clamp-4/);
+  assert.match(services, /svc-description mt-3 text-sm/);
+  assert.doesNotMatch(services, /line-clamp-4|h-\[min\(560px,70vh\)\]/);
+  assert.match(services, /\[&>\*\]:shrink-0/);
 });
 
 test('large story video is deferred and optimized for streaming', async () => {

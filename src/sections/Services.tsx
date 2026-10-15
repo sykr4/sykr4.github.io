@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type WheelEvent } from "react";
 import { createPortal } from "react-dom";
 import { useGSAP } from "@gsap/react";
 import { gsap, lockScroll, scrollToTarget, ScrollTrigger } from "@/lib/scroll";
@@ -16,13 +16,27 @@ interface OriginRect {
 
 export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLSpanElement>(null);
   const countRef = useRef<HTMLSpanElement>(null);
   const openerRef = useRef<HTMLButtonElement | null>(null);
-  // The pinned horizontal section needs room for the full service copy.
-  // Any pointer desktop from 1024 px keeps the pinned narrative; touch/tablet layouts use normal flow.
-  const desktop = useMediaQuery("(min-width: 1024px) and (hover: hover)");
+  // Use the browser's available space, not the monitor's physical dimensions.
+  // Keep the original card width; shorter windows only reduce empty spacing.
+  const desktop = useMediaQuery("(min-width: 768px) and (hover: hover)");
+  const shortViewport = useMediaQuery("(max-height: 700px)");
+  const compact = desktop && shortViewport;
+
+  const scrollCardContent = (event: WheelEvent<HTMLElement>) => {
+    const element = event.currentTarget;
+    const remaining = element.scrollHeight - element.clientHeight - element.scrollTop;
+    // Read overflowing copy first. At either edge, the wheel continues the
+    // horizontal carousel, so a short window never traps or skips the row.
+    if (Math.abs(event.deltaY) > Math.abs(event.deltaX) &&
+      ((event.deltaY > 0 && remaining > 1) || (event.deltaY < 0 && element.scrollTop > 1))) {
+      event.stopPropagation();
+    }
+  };
   const [height, setHeight] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [origin, setOrigin] = useState<OriginRect | null>(null);
@@ -34,19 +48,33 @@ export function Services() {
     }
     const measure = () => {
       const track = trackRef.current;
-      if (track) setHeight(track.scrollWidth - window.innerWidth + window.innerHeight);
+      const viewport = viewportRef.current;
+      if (!track || !viewport) return;
+      // Height changes the card layout, never the availability of the scroll
+      // animation. Reserve the full horizontal distance in the document.
+      setHeight(Math.max(0, track.scrollWidth - viewport.clientWidth) + window.innerHeight);
     };
     measure();
+    const observer = new ResizeObserver(measure);
+    if (trackRef.current) observer.observe(trackRef.current);
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [desktop]);
+    return () => { observer.disconnect(); window.removeEventListener("resize", measure); };
+  }, [desktop, compact]);
+
+  const updateProgress = (progress: number) => {
+    if (barRef.current) barRef.current.style.transform = `scaleX(${progress.toFixed(4)})`;
+    if (countRef.current) countRef.current.textContent = String(Math.min(SERVICES.length, Math.floor(progress * SERVICES.length) + 1)).padStart(2, "0");
+  };
 
   useGSAP(
     () => {
       const track = trackRef.current;
-      if (!desktop || !height || !track) return;
+      const viewport = viewportRef.current;
+      updateProgress(0);
+      if (!desktop || height === null || !track || !viewport) return;
+      viewport.scrollLeft = 0;
       const tween = gsap.to(track, {
-        x: () => -(track.scrollWidth - window.innerWidth),
+        x: () => -Math.max(0, track.scrollWidth - viewport.clientWidth),
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -54,10 +82,7 @@ export function Services() {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            if (barRef.current) barRef.current.style.transform = `scaleX(${self.progress.toFixed(4)})`;
-            if (countRef.current) countRef.current.textContent = String(Math.min(SERVICES.length, Math.floor(self.progress * SERVICES.length) + 1)).padStart(2, "0");
-          },
+          onUpdate: (self) => updateProgress(self.progress),
         },
       });
       gsap.utils.toArray<HTMLElement>(".svc-card").forEach((card) => {
@@ -69,7 +94,7 @@ export function Services() {
       });
       ScrollTrigger.refresh();
     },
-    { scope: sectionRef, dependencies: [desktop, height], revertOnUpdate: true },
+    { scope: sectionRef, dependencies: [desktop, compact, height], revertOnUpdate: true },
   );
 
   const openDetail = (index: number, button: HTMLButtonElement) => {
@@ -80,25 +105,25 @@ export function Services() {
   };
 
   const intro = (
-    <div className={`flex shrink-0 flex-col justify-between gap-10 ${desktop ? "w-[min(520px,40vw)] pr-8" : "w-full"}`}>
-      <div>
+    <div onWheel={compact ? scrollCardContent : undefined} className={`flex shrink-0 flex-col justify-between ${compact ? "max-h-[calc(100svh-32px)] w-[400px] gap-6 overflow-y-auto overscroll-y-contain pr-8" : desktop ? "w-[min(520px,40vw)] gap-10 pr-8" : "w-full gap-10"}`}>
+      <div className="shrink-0">
         <SectionLabel index="02" label="Servicios" />
         <RevealWords
           as="h2"
           text="Encuentra la solución que necesita tu empresa."
           highlight={["solución"]}
-          className="mt-8 font-display text-[clamp(2.1rem,4vw,3.9rem)] font-semibold leading-[1.03] tracking-[-0.04em]"
+          className={`${compact ? "mt-5" : "mt-8"} font-display text-[clamp(2.1rem,4vw,3.9rem)] font-semibold leading-[1.03] tracking-[-0.04em]`}
         />
       </div>
-      <div>
+      <div className="shrink-0">
         <p className="max-w-sm text-mute">Automatizar tareas, conectar herramientas, controlar gastos, proteger datos o crear una web. Descubre en cada área cómo podemos ayudarte y qué podemos hacer.</p>
-        <div className={desktop ? "mt-8 flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.2em] text-mute" : "hidden"}>
+        <div className={desktop ? `${compact ? "mt-4" : "mt-8"} flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.2em] text-mute` : "hidden"}>
           <span ref={countRef} className="tabular-nums text-bone">01</span>
           <span className="relative h-px w-40 overflow-hidden bg-white/15">
             <span ref={barRef} className="absolute inset-0 origin-left bg-linear-to-r from-cyan to-violet" style={{ transform: "scaleX(0)" }} />
           </span>
           <span>{String(SERVICES.length).padStart(2, "0")}</span>
-          <span className="ml-2 text-bone/60">Sigue explorando →</span>
+          <span className="ml-2 hidden text-bone/60 xl:inline">Sigue explorando →</span>
         </div>
       </div>
     </div>
@@ -106,14 +131,17 @@ export function Services() {
 
   return (
     <>
-      <section id="servicios" ref={sectionRef} data-gl-state="2" className="relative" style={desktop && height ? { height } : undefined}>
-        <div className={desktop ? "sticky top-0 flex h-screen flex-col justify-center overflow-hidden" : "py-28"}>
+      <section id="servicios" ref={sectionRef} data-gl-state="2" className="relative" style={desktop && height !== null ? { height } : undefined}>
+        <div
+          ref={viewportRef}
+          className={desktop ? "sticky top-0 flex h-screen flex-col justify-center overflow-hidden" : "py-28"}
+        >
           {!desktop && <div className="px-5 md:px-10">{intro}</div>}
           <div
             ref={trackRef}
             className={
               desktop
-                ? "flex w-max items-stretch gap-6 pl-[6vw] pr-[8vw] pt-12 will-change-transform"
+                ? `flex w-max items-stretch gap-6 pl-[6vw] pr-[8vw] ${compact ? "py-4" : "pt-12"} will-change-transform`
                 : "mt-12 grid gap-4 px-5 pb-6 sm:grid-cols-2 md:px-10"
             }
           >
@@ -121,36 +149,37 @@ export function Services() {
             {SERVICES.map((s, i) => (
               <TiltCard
                 key={s.title}
-                className={desktop ? "svc-card group h-[min(560px,70vh)] min-h-[440px] w-[min(400px,34vw)] shrink-0 overflow-hidden rounded-[28px] border border-white/10 bg-ink-2/85 transition-colors focus-within:border-cyan/60" : "svc-card group min-h-[430px] w-full overflow-hidden rounded-[26px] border border-white/10 bg-ink-2/85 transition-colors focus-within:border-cyan/60"}
+                className={`svc-card group flex overflow-hidden rounded-[28px] border border-white/10 bg-ink-2/85 transition-colors focus-within:border-cyan/60 ${desktop ? `w-[400px] shrink-0 ${compact ? "max-h-[calc(100svh-32px)]" : "min-h-[560px]"}` : "min-h-[430px] w-full rounded-[26px]"}`}
               >
                 <button
                   type="button"
                   onClick={(e) => openDetail(i, e.currentTarget)}
+                  onWheel={compact ? scrollCardContent : undefined}
                   aria-haspopup="dialog"
                   data-cursor="Ver detalles"
-                  className={`relative flex h-full w-full flex-col text-left ${desktop ? "min-h-[440px] p-7" : "min-h-[430px] p-6"}`}
+                  className={`relative flex min-h-0 w-full flex-1 flex-col text-left [&>*]:shrink-0 ${compact ? "overflow-y-auto overscroll-y-contain px-5 py-4" : desktop ? "min-h-[560px] p-7" : "min-h-[430px] p-6"}`}
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <span className="shrink-0 font-mono text-xs text-mute">{String(i + 1).padStart(2, "0")} / {String(SERVICES.length).padStart(2, "0")}</span>
                     <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-cyan">{s.metric}</span>
                   </div>
-                  <div className="mt-8 text-bone/90 [transform:translateZ(50px)]"><ServiceIcon name={s.icon} className="h-16 w-16" /></div>
-                  <h3 className="mt-auto pt-8 font-display text-[1.6rem] font-medium leading-[1.1] tracking-[-0.03em] [transform:translateZ(30px)]">{s.title}</h3>
-                  <p className="mt-4 text-base font-medium leading-snug text-cyan">{s.microclaim}</p>
-                  <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-mute">{s.text}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className={`${compact ? "mt-3" : "mt-8"} text-bone/90 [transform:translateZ(50px)]`}><ServiceIcon name={s.icon} className={compact ? "h-10 w-10" : "h-16 w-16"} /></div>
+                  <h3 className={`mt-auto ${compact ? "pt-3" : "pt-8"} font-display text-[1.6rem] font-medium leading-[1.1] tracking-[-0.03em] [transform:translateZ(30px)]`}>{s.title}</h3>
+                  <p className={`${compact ? "mt-2" : "mt-4"} text-base font-medium leading-snug text-cyan`}>{s.microclaim}</p>
+                  <p className={`svc-description mt-3 text-sm ${compact ? "leading-normal" : "leading-relaxed"} text-mute`}>{s.text}</p>
+                  <div className={`${compact ? "mt-3" : "mt-6"} flex flex-wrap gap-2`}>
                     {s.tags.map((t) => <span key={t} className="rounded-full bg-white/[0.05] px-3 py-1 text-[11px] text-bone/75">{t}</span>)}
                   </div>
-                  <span className="mt-6 inline-flex items-center gap-2 self-start font-mono text-[10px] uppercase tracking-[0.2em] text-bone/55 transition-colors duration-300 group-hover:text-cyan">
+                  <span className={`${compact ? "mt-3" : "mt-6"} inline-flex items-center gap-2 self-start font-mono text-[10px] uppercase tracking-[0.2em] text-bone/55 transition-colors duration-300 group-hover:text-cyan`}>
                     Ver qué incluye <span aria-hidden>↗</span>
                   </span>
                 </button>
               </TiltCard>
             ))}
-            <div className={desktop ? "flex w-[min(400px,34vw)] shrink-0 flex-col justify-center rounded-[28px] border border-dashed border-white/15 p-8" : "flex min-h-[300px] w-full flex-col justify-center rounded-[26px] border border-dashed border-white/15 p-7 sm:col-span-2"}>
+            <div onWheel={compact ? scrollCardContent : undefined} className={desktop ? `flex shrink-0 flex-col justify-center rounded-[28px] border border-dashed border-white/15 ${compact ? "max-h-[calc(100svh-32px)] w-[400px] overflow-y-auto overscroll-y-contain p-5 [&>*]:shrink-0" : "w-[min(400px,34vw)] p-8"}` : "flex min-h-[300px] w-full flex-col justify-center rounded-[26px] border border-dashed border-white/15 p-7 sm:col-span-2"}>
               <p className="font-display text-3xl font-medium leading-tight tracking-[-0.03em]">¿No sabes por dónde empezar?</p>
               <p className="mt-4 text-mute">Cuéntanos cómo trabaja tu equipo y qué quieres mejorar. Te ayudamos a decidir por dónde empezar.</p>
-              <PrimaryButton label="Ayúdame a empezar" onClick={() => scrollToTarget("#contacto")} className="mt-8" />
+              <PrimaryButton label="Ayúdame a empezar" onClick={() => scrollToTarget("#contacto")} className={compact ? "mt-4" : "mt-8"} />
             </div>
           </div>
         </div>

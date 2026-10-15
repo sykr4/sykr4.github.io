@@ -1,21 +1,28 @@
 import type { SVGProps } from "react";
 import type { IconName } from "@/data/content";
+import { LOGO_ACCENT_COLOR, LOGO_ACCENT_PATH, LOGO_LETTERS, LOGO_MARK_VIEW_BOX, LOGO_VIEW_BOX } from "@/data/brand";
 
 type P = SVGProps<SVGSVGElement>;
 
 export function LogoMark(props: P) {
   return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden {...props}>
-      <defs>
-        <linearGradient id="sykr4-g" x1="8" y1="8" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#5cf2ff" />
-          <stop offset="1" stopColor="#8b5cff" />
-        </linearGradient>
-      </defs>
-      <rect x="1" y="1" width="30" height="30" rx="9" stroke="currentColor" strokeOpacity=".3" />
-      <path d="M21.5 9.5h-8a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7h-8" stroke="url(#sykr4-g)" strokeWidth="2.4" strokeLinecap="round" />
-      <circle cx="21.5" cy="9.5" r="1.9" fill="#d6ff4a" />
-      <circle cx="10.5" cy="23.5" r="1.9" fill="#5cf2ff" />
+    <svg viewBox={LOGO_MARK_VIEW_BOX} fill="currentColor" fillRule="evenodd" aria-hidden {...props}>
+      <path d={LOGO_LETTERS[0].d} />
+      <path d={LOGO_ACCENT_PATH} fill={LOGO_ACCENT_COLOR} />
+    </svg>
+  );
+}
+
+export function LogoWordmark({ outline = false, letterClassName, ...props }: P & { outline?: boolean; letterClassName?: string }) {
+  return (
+    <svg viewBox={LOGO_VIEW_BOX} fill={outline ? "none" : "currentColor"} fillRule="evenodd" stroke={outline ? "currentColor" : undefined} aria-hidden {...props}>
+      {LOGO_LETTERS.map(({ letter, d, bounds }, index) => (
+        <g key={letter} className={letterClassName}>
+          {outline && <rect {...bounds} fill="transparent" stroke="none" />}
+          <path d={d} stroke={outline ? "currentColor" : undefined} vectorEffect={outline ? "non-scaling-stroke" : undefined} />
+          {index === 0 && <path d={LOGO_ACCENT_PATH} fill={LOGO_ACCENT_COLOR} stroke="none" />}
+        </g>
+      ))}
     </svg>
   );
 }

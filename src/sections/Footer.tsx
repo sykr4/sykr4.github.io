@@ -2,7 +2,7 @@ import { returnToTop, scrollToTarget } from "@/lib/scroll";
 import { useLocalTime } from "@/lib/hooks";
 import { SERVICES } from "@/data/content";
 import { Magnetic } from "@/components/ui";
-import { ArrowUpRight } from "@/components/icons";
+import { ArrowUpRight, LogoWordmark } from "@/components/icons";
 
 export function Footer() {
   const time = useLocalTime();
@@ -53,13 +53,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Wordmark gigante: cada letra reacciona al hover */}
+        {/* Wordmark gigante: conserva el espacio y la reacción de cada letra. */}
         <div aria-hidden className="mt-20 flex select-none justify-between font-display text-[clamp(5rem,23vw,22rem)] font-bold leading-[0.8] tracking-[-0.06em]">
-          {"SYKR4".split("").map((ch, i) => (
-            <span key={i} className="text-outline inline-block transition-[transform,-webkit-text-stroke-color] duration-700 ease-out-expo hover:-translate-y-[8%] hover:[-webkit-text-stroke-color:#5cf2ff]">
-              {ch}
-            </span>
-          ))}
+          <LogoWordmark outline className="h-[0.8em] w-full overflow-visible text-bone/40" letterClassName="transition-[transform,color] duration-700 ease-out-expo hover:-translate-y-[8%] hover:text-cyan" />
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-6 font-mono text-[10px] uppercase tracking-[0.2em] text-mute">
