@@ -47,14 +47,8 @@ La salida de producción se genera en `dist/`.
 
 ## Formulario de contacto en GitHub Pages
 
-GitHub Pages solo sirve archivos estáticos y no puede ejecutar el backend Node incluido en `server/`.
+GitHub Pages solo sirve archivos estáticos y no puede ejecutar el servidor Node incluido en `server/`.
 
-Por eso `.env.production` establece:
+La compilación de producción lee dos variables públicas del entorno, las Repository Variables `VITE_CONTACT_ENDPOINT` y `VITE_TURNSTILE_SITE_KEY`. El workflow las pasa al paso de build. No van en `.env.production` ni hay un valor alternativo en el código. Si falta alguna, `npm run build` se detiene: no descarga un TXT, no abre el correo y no simula un envío.
 
-```env
-VITE_CONTACT_MODE=download
-```
-
-Así el formulario no intenta llamar a `/api/contact` ni muestra un envío ficticio: valida los datos y prepara la consulta como archivo de texto.
-
-Si más adelante se quiere envío real, hay que configurar un endpoint HTTPS externo en `VITE_CONTACT_ENDPOINT` o cambiar a modo email con una dirección real.
+En local, exporta esas mismas variables públicas en el proceso antes de `npm run build`. No hace falta ningún secreto. La ruta `POST /contact` sigue exigiendo IAM hasta que se autorice su apertura, así que el navegador recibirá 403 hasta entonces.
