@@ -7,10 +7,12 @@ import { Magnetic, RollText, SectionLabel } from "@/components/ui";
 import { ArrowUpRight, Check } from "@/components/icons";
 import { cn } from "@/utils/cn";
 import { Astronaut, type AstronautCue } from "@/components/Astronaut";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { CONTACT_LIMITS, validateContact } from "../../shared/contact";
 
 const offlineMode = import.meta.env.VITE_CONTACT_MODE;
 const contactEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT?.trim() || (offlineMode === "download" || offlineMode === "email" ? "" : "/api/contact");
+const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY?.trim() || "";
 const configuredEmail = import.meta.env.VITE_CONTACT_EMAIL?.trim() || "";
 const contactEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(configuredEmail) ? configuredEmail : "";
 type ContactStatus = "idle" | "sending" | "sent" | "email" | "prepared" | "error";
@@ -132,12 +134,17 @@ export function Contact() {
   const requestRef = useRef<AbortController | null>(null);
   const identityRef = useRef<{ payload: string; key: string; accepted: boolean } | null>(null);
   const mountedRef = useRef(false);
+  const tokenRef = useRef("");
+  const helpRef = useRef<string[]>([]);
+  const turnstileLoadFailedRef = useRef(false);
   const [status, setStatus] = useState<ContactStatus>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [help, setHelp] = useState<string[]>([]);
   const [astronautCue, setAstronautCue] = useState<AstronautCue>(null);
   const [available, setAvailable] = useState<boolean | null>(null);
   const [sendError, setSendError] = useState("");
+  const [turnstileReset, setTurnstileReset] = useState(0);
+  helpRef.current = help;
 
   useEffect(() => {
     if (contactEndpoint !== "/api/contact") return;
@@ -160,7 +167,12 @@ export function Contact() {
   useEffect(() => {
     const selectService = (event: Event) => {
       const service = (event as CustomEvent<string>).detail;
-      if (HELP_OPTIONS.includes(service)) setHelp((previous) => previous.includes(service) ? previous : [...previous, service]);
+      if (HELP_OPTIONS.includes(service)) setHelp((previous) => {
+        if (previous.includes(service)) return previous;
+        const next = [...previous, service];
+        helpRef.current = next;
+        return next;
+      });
     };
     window.addEventListener("sykr4:select-service", selectService);
     return () => window.removeEventListener("sykr4:select-service", selectService);
@@ -168,8 +180,12 @@ export function Contact() {
 
   const gesture = (type: "wave" | "wrist") => setAstronautCue((previous) => ({ gesture: type, sequence: (previous?.sequence ?? 0) + 1 }));
   const toggle = (h: string) => {
-    setHelp((prev) => (prev.includes(h) ? prev.filter((x) => x !== h) : [...prev, h]));
-    if (status !== "sending") setStatus("idle");
+    setHelp((prev) => {
+      const next = prev.includes(h) ? prev.filter((x) => x !== h) : [...prev, h];
+      helpRef.current = next;
+      return next;
+    });
+    if (status !== "sending" && !turnstileLoadFailedRef.current) setStatus("idle");
     gesture("wrist");
   };
 
@@ -178,7 +194,8 @@ export function Contact() {
     const form = formRef.current;
     if (!form || requestRef.current) return;
     const fd = new FormData(form);
-    const { data, errors: errs } = validateContact({ name: fd.get("nombre"), email: fd.get("email"), company: fd.get("empresa"), message: fd.get("mensaje"), services: help });
+    const selected = helpRef.current;
+    const { data, errors: errs } = validateContact({ name: fd.get("nombre"), email: fd.get("email"), company: fd.get("empresa"), message: fd.get("mensaje"), services: selected });
     setErrors(errs);
     if (Object.keys(errs).length) {
       if (!getDeviceProfile().reducedMotion) Object.keys(errs).forEach((k) => gsap.fromTo(`[data-field="${k}"]`, { x: -12 }, { x: 0, duration: 0.7, ease: "elastic.out(1, 0.3)" }));
@@ -191,31 +208,61 @@ export function Contact() {
       `Nombre: ${String(fd.get("nombre")).trim()}`,
       `Correo: ${String(fd.get("email")).trim()}`,
       `Empresa: ${String(fd.get("empresa") ?? "").trim() || "No indicada"}`,
-      `Servicios: ${help.join(", ") || "Por definir juntos"}`,
+      `Servicios: ${selected.join(", ") || "Por definir juntos"}`,
       "",
       String(fd.get("mensaje")).trim(),
     ].join("\n");
     if (contactEndpoint) {
-      const payload = JSON.stringify({ ...data, website: String(fd.get("website") ?? "") });
+      const website = String(fd.get("website") ?? "");
+      const payload = JSON.stringify({ ...data, website });
       if (identityRef.current?.payload !== payload) identityRef.current = { payload, key: crypto.randomUUID(), accepted: false };
       const identity = identityRef.current;
       if (identity.accepted) { setStatus("sent"); return; }
+      if (turnstileSiteKey && !tokenRef.current) {
+        if (turnstileLoadFailedRef.current) {
+          turnstileLoadFailedRef.current = false;
+          setTurnstileReset((value) => value + 1);
+          setSendError("Volvemos a cargar la comprobación de seguridad. Complétala y pulsa «Enviar consulta» de nuevo; conservamos los datos.");
+        } else {
+          setSendError("Confirma la comprobación de seguridad antes de enviar. Conservamos los datos.");
+        }
+        setStatus("error");
+        return;
+      }
+      const attemptToken = turnstileSiteKey ? tokenRef.current : "";
       const controller = new AbortController();
       requestRef.current = controller;
-      const timeout = window.setTimeout(() => controller.abort(), 15000);
+      const timeout = window.setTimeout(() => controller.abort(), 25000);
       setStatus("sending");
       try {
         const response = await fetch(contactEndpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json", "Idempotency-Key": identity.key },
-          body: payload,
+          body: JSON.stringify({ ...data, website, ...(turnstileSiteKey ? { turnstileToken: attemptToken } : {}) }),
           signal: controller.signal,
         });
         // Require an explicit acknowledgement; a SPA's HTML fallback is never a successful send.
         const result = await response.json();
-        if (!response.ok || result.ok !== true || (contactEndpoint === "/api/contact" && !result.id)) {
-          if (result.code === "validation" && result.errors) setErrors(result.errors);
-          throw new Error(result.code === "unconfigured" ? "El envío todavía no está conectado. Tu consulta no se ha enviado; conservamos los datos en este formulario." : result.code === "rate_limit" ? "Has realizado varios intentos. Espera diez minutos antes de volver a enviar; conservamos tus datos." : "No hemos podido confirmar el envío. Conservamos tu mensaje para que puedas volver a intentarlo.");
+        const acceptedId = typeof result?.id === "string" && result.id.length > 0;
+        if (!(response.status === 202 && result?.ok === true && result?.accepted === true && acceptedId)) {
+          if (response.status === 422 && result?.errors) setErrors(result.errors);
+          const retryAfter = typeof response.headers?.get === "function" ? response.headers.get("Retry-After") : "";
+          const code = typeof result?.code === "string" ? result.code : "";
+          const uncertain = code === "delivery_unknown";
+          const message = response.status === 403 && code === "captcha"
+            ? "La comprobación de seguridad ha caducado o no es válida. Repítela para enviar la consulta. Conservamos los datos."
+            : response.status === 403
+              ? "La consulta no se ha enviado: el formulario todavía no acepta envíos desde el navegador. Conservamos los datos."
+              : response.status === 429 || code === "rate_limit"
+                ? `Has realizado varios intentos. Espera ${retryAfter && /^\d+$/.test(retryAfter) ? `${retryAfter} segundos` : "diez minutos"} antes de volver a enviar; conservamos tus datos.`
+                : uncertain
+                  ? "No podemos confirmar si la consulta se ha enviado. No se reintentará sola. Conservamos los datos en el formulario."
+                  : response.status === 503 && code === "unconfigured"
+                    ? "El envío todavía no está conectado. Tu consulta no se ha enviado; conservamos los datos en este formulario."
+                    : response.status === 502 || response.status === 503
+                      ? "El envío no está disponible en este momento. Conservamos los datos para que puedas intentarlo más tarde."
+                      : "No hemos podido confirmar el envío. Conservamos tu mensaje para que puedas volver a intentarlo.";
+          throw new Error(message);
         }
         if (!mountedRef.current) return;
         identity.accepted = true;
@@ -223,11 +270,21 @@ export function Contact() {
         gesture("wave");
       } catch (error) {
         if (mountedRef.current) {
-          setSendError(error instanceof Error && !["AbortError", "TypeError", "SyntaxError"].includes(error.name) ? error.message : "No hemos podido confirmar el envío. Conservamos tu mensaje para que puedas volver a intentarlo.");
+          const name = typeof error === "object" && error && "name" in error && typeof error.name === "string" ? error.name : "";
+          const detail = typeof error === "object" && error && "message" in error && typeof error.message === "string" ? error.message : "";
+          setSendError(name === "AbortError" || name === "TypeError"
+            ? "No podemos confirmar si la consulta se ha enviado. No se reintentará sola. Conservamos los datos en el formulario."
+            : name !== "SyntaxError" && detail
+              ? detail
+              : "No hemos podido confirmar el envío. Conservamos tu mensaje para que puedas volver a intentarlo.");
           setStatus("error");
         }
       } finally {
         window.clearTimeout(timeout);
+        if (attemptToken && (!tokenRef.current || tokenRef.current === attemptToken)) {
+          tokenRef.current = "";
+          if (mountedRef.current) setTurnstileReset((value) => value + 1);
+        }
         requestRef.current = null;
       }
       return;
@@ -280,7 +337,7 @@ export function Contact() {
             </ul>
           </div>
 
-          <form ref={formRef} onSubmit={submit} onChange={() => { if (status !== "sending") setStatus("idle"); }} aria-busy={status === "sending"} noValidate className="relative rounded-[32px] border border-white/10 bg-ink-2/85 p-6 md:p-10">
+          <form ref={formRef} onSubmit={submit} onChange={() => { if (status !== "sending" && !turnstileLoadFailedRef.current) setStatus("idle"); }} aria-busy={status === "sending"} noValidate className="relative rounded-[32px] border border-white/10 bg-ink-2/85 p-6 md:p-10">
             <h3 className="font-display text-lg font-medium tracking-tight">Empecemos por lo que necesitas</h3>
             <p className="mb-7 mt-2 text-sm leading-relaxed text-mute">No necesitas saber de tecnología. Cuéntanos cómo trabaja tu equipo y qué quieres mejorar.</p>
             {available === false && <p className="mb-6 text-sm text-rose-300" role="status">El formulario aún no está disponible para enviar consultas.</p>}
@@ -320,6 +377,20 @@ export function Contact() {
 
             <Field name="mensaje" label="Cuéntanos tu proyecto *" textarea error={errors.mensaje} className="mt-9" />
             <p className="mt-3 text-xs leading-relaxed text-mute">Explica qué quieres resolver, qué herramientas usa tu equipo y qué resultado buscas. Los campos con * son obligatorios.</p>
+            {turnstileSiteKey ? <TurnstileWidget
+              siteKey={turnstileSiteKey}
+              resetKey={turnstileReset}
+              onToken={(token) => {
+                tokenRef.current = token;
+                if (token) turnstileLoadFailedRef.current = false;
+              }}
+              onError={() => {
+                tokenRef.current = "";
+                turnstileLoadFailedRef.current = true;
+                setSendError("No hemos podido cargar la comprobación de seguridad. Pulsa «Enviar consulta» para volver a intentarlo. Conservamos los datos.");
+                setStatus("error");
+              }}
+            /> : null}
 
             <div className="mt-10 flex flex-wrap items-center justify-between gap-6">
               <p className="max-w-xs text-xs leading-relaxed text-mute">
