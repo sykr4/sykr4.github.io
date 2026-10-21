@@ -60,6 +60,14 @@
 #inicio, #servicios, #casos, #resultados, #nosotros, #recorrido, #contacto { min-width: 0; }
 #contacto form, #contacto [data-field] { min-width: 0; }
 #contacto [role="status"] { overflow-wrap: anywhere; }
+#contacto [data-field] input { color-scheme: dark; }
+/* Chrome impone el fondo de autofill con !important: se recorta al texto en vez de sobrescribirlo */
+#contacto [data-field] input:is(:autofill, :-webkit-autofill) {
+  -webkit-text-fill-color: var(--color-bone);
+  caret-color: var(--color-bone);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
 #casos .case-item, #casos .case-item *, #casos .grid > div { min-width: 0; }
 #casos .case-item h3 { overflow-wrap: anywhere; }
 #casos .case-item .items-end { flex-wrap: wrap; }
